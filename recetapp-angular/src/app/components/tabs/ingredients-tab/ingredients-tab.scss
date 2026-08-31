@@ -1,0 +1,22 @@
+@use '../../../../styles/variables' as *;
+
+:host { display: block; }
+
+.own-filter {
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid $gray-300;
+  border-radius: $radius-sm;
+  background: $white;
+  min-height: 36px;
+  white-space: nowrap;
+
+  .form-check-input {
+    margin-left: 0;
+    margin-right: 0.35rem;
+  }
+
+  .form-check-label {
+    user-select: none;
+  }
+}

@@ -1,0 +1,79 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="fw-bold mb-0">Recetas</h5>
+    <button class="btn btn-primary btn-sm" (click)="openRecipe.emit({ id: null, viewMode: false })"
+        [disabled]="recipes.length >= 250">
+        <i class="bi bi-plus-lg"></i> Nueva Receta
+    </button>
+</div>
+
+@if (recipes.length >= 200) {
+<div class="alert alert-warning small py-2 px-3 mb-3 d-flex align-items-center gap-2">
+    <i class="bi bi-exclamation-triangle"></i>
+    <span>{{ recipes.length }}/250 recetas. {{ 250 - recipes.length > 0 ? 'Quedan ' + (250 - recipes.length) + '.' : 'Límite alcanzado.' }}</span>
+</div>
+} @else {
+<div class="alert alert-info small py-2 px-3 mb-3 d-flex align-items-center gap-2">
+    <i class="bi bi-info-circle"></i>
+    <span>{{ ownCount }} propias / {{ recipes.length }} totales.</span>
+</div>
+}
+
+<div class="row g-2 mb-3 align-items-center">
+    <div class="col">
+        <div class="input-group input-group-sm">
+            <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" id="recipesSearch" name="recipesSearch" autocomplete="off"
+                placeholder="Buscar receta..." aria-label="Buscar receta"
+                [(ngModel)]="searchText">
+        </div>
+    </div>
+    <div class="col-auto">
+        <div class="form-check form-check-inline own-filter mb-0"
+            (click)="toggleOwn()">
+            <input class="form-check-input" type="checkbox" [checked]="showOwnOnly" id="ownRecipesCheck" name="ownRecipes">
+            <label class="form-check-label text-nowrap small" for="ownRecipesCheck">Solo mias</label>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    @for (r of filtered; track r.id) {
+    <div class="col-12">
+        <div class="card shadow-sm h-100 recipe-card">
+            @if (r.imagen) {
+            <img [src]="r.imagen" class="card-img-top recipe-img"
+                (click)="openRecipe.emit({ id: r.id, viewMode: true })" style="cursor: pointer;">
+            }
+            <div class="card-body">
+                <h6 class="card-title fw-bold mb-1">
+                    {{ r.nombre }}
+                    @if (r.isPredefined) {
+                    <span class="badge bg-secondary ms-1" style="font-size: 0.6rem;">Predefinido</span>
+                    }
+                </h6>
+                <p class="card-text text-muted small mb-2">{{ r.pasos.substring(0, 80) }}...</p>
+                <div class="d-flex gap-2 align-items-center">
+                    @if (!r.isPredefined) {
+                    <button class="btn btn-outline-secondary btn-sm"
+                        (click)="openRecipe.emit({ id: r.id, viewMode: false })">Editar</button>
+                    }
+                    <button class="btn btn-outline-success btn-sm ms-auto"
+                        (click)="addToShopping.emit(r.id); $event.stopPropagation()"
+                        title="Añadir ingredientes a la compra">
+                        <i class="bi bi-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    @if (filtered.length === 0) {
+    <div class="col-12 text-center text-muted py-4">
+        @if (showOwnOnly && !searchText.trim()) {
+        No has creado recetas todavía.
+        } @else {
+        No se han encontrado recetas con ese nombre.
+        }
+    </div>
+    }
+</div>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>RecetAPP</title>
+  <script>
+    window.gpDeferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      window.gpDeferredPrompt = e;
+    });
+    (function () {
+      function preventZoom(e) {
+        if (e.cancelable) e.preventDefault();
+      }
+      document.addEventListener('gesturestart', preventZoom);
+      document.addEventListener('gesturechange', preventZoom);
+      document.addEventListener('gestureend', preventZoom);
+      document.addEventListener(
+        'touchmove',
+        (e) => {
+          if (e.touches && e.touches.length > 1) preventZoom(e);
+        },
+        { passive: false }
+      );
+    })();
+  </script>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+  <meta name="description" content="RecetAPP - Gestiona tus recetas, planning semanal y lista de la compra.">
+  <meta name="theme-color" content="#0d6efd">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RecetAPP">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <app-root></app-root>
+  <noscript>Para usar RecetAPP necesitas habilitar JavaScript.</noscript>
+</body>
+</html>

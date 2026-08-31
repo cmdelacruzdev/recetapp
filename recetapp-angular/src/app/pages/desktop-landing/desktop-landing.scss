@@ -1,0 +1,76 @@
+@use '../../../styles/variables' as *;
+
+.desktop-wrapper {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $primary 0%, #6610f2 100%);
+  padding: 2rem;
+}
+
+.desktop-card {
+  background: $white;
+  border-radius: $radius-xl;
+  padding: 2rem 2rem;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: $shadow-lg;
+}
+
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, $primary, #6610f2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+}
+
+.qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: $radius-lg;
+  border: 2px solid $gray-200;
+  padding: 8px;
+  background: $white;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+
+  i {
+    font-size: 1.5rem;
+  }
+  span {
+    font-size: $font-size-sm;
+    color: $gray-700;
+  }
+}

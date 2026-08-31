@@ -1,0 +1,29 @@
+<main class="form-signin w-100 m-auto d-flex align-items-center py-4"
+    style="height: 100vh; max-width: 330px; padding: 15px;">
+    <form (ngSubmit)="handleLogin()" class="w-100">
+        <div class="text-center mb-3">
+            <img src="recetapp_logo_transparente.png" alt="RecetAPP" class="app-logo-transparente" />
+        </div>
+        <h1 class="h4 mb-3 fw-bold text-center">RecetAPP</h1>
+
+        <div class="form-floating input-with-icon mb-3">
+            <i class="bi bi-person"></i>
+            <input type="text" class="form-control" id="username" placeholder="Usuario" [(ngModel)]="username"
+                name="username" autocomplete="username" required>
+            <label for="username">Usuario</label>
+        </div>
+        <div class="form-floating input-with-icon mb-3">
+            <i class="bi bi-lock"></i>
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" [(ngModel)]="password"
+                name="password" autocomplete="current-password" required>
+            <label for="password">Contraseña</label>
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="rememberMe" [(ngModel)]="rememberMe" name="rememberMe">
+            <label class="form-check-label small" for="rememberMe">Recordarme</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Entrar</button>
+        <a routerLink="/forgot-password" class="w-100 btn btn-link btn-sm mb-2">¿Olvidaste tu contraseña?</a>
+        <a routerLink="/register" class="w-100 btn btn-outline-secondary btn-sm">No tengo cuenta</a>
+    </form>
+</main>

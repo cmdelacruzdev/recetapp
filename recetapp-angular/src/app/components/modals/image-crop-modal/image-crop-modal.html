@@ -1,0 +1,39 @@
+<div class="modal fade px-3 py-4" id="imageCropModal" tabindex="-1">
+    <div class="modal-backdrop-custom"></div>
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h6 class="modal-title fw-bold">Ajustar imagen</h6>
+                <button type="button" class="btn-close" (click)="onCancel()"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p class="small text-muted mb-2">Arrastra para posicionar, usa el slider para zoom.</p>
+                <div class="crop-stage mx-auto mb-3" [class.crop-stage--circle]="mode === 'circle'" [class.crop-stage--landscape]="mode === 'landscape'">
+                    <canvas #cropCanvas id="cropCanvas"
+                        (mousedown)="onCanvasMouseDown($event)"
+                        (mousemove)="onCanvasMouseMove($event)"
+                        (mouseup)="onCanvasMouseUp()"
+                        (mouseleave)="onCanvasMouseUp()"
+                        (touchstart)="onTouchStart($event)"
+                        (touchmove)="onTouchMove($event)"
+                        (touchend)="onTouchEnd()">
+                    </canvas>
+                    <div class="crop-guide" [class.crop-guide--circle]="mode === 'circle'" [class.crop-guide--landscape]="mode === 'landscape'"></div>
+                </div>
+                <div class="px-3 mb-3">
+                    <label for="cropZoom" id="cropZoomLabel" class="form-label small text-muted">Zoom</label>
+                    <input type="range" class="form-range" id="cropZoom" name="cropZoom"
+                        min="0.5" max="3" step="0.05"
+                        [value]="zoom" (input)="onZoomChange($any($event.target).valueAsNumber)"
+                        aria-labelledby="cropZoomLabel">
+                </div>
+            </div>
+            <div class="modal-footer py-2">
+                <button type="button" class="btn btn-outline-secondary btn-sm" (click)="onCancel()">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-sm" (click)="onConfirm()">
+                    <i class="bi bi-check-lg"></i> Aplicar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

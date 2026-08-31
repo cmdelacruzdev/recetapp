@@ -1,0 +1,58 @@
+<h5 class="fw-bold mb-2">¿Qué cocino hoy? 🍳</h5>
+<p class="text-muted small mb-3">Busca y selecciona los ingredientes que tienes para ver opciones:</p>
+
+<div class="position-relative mb-3">
+    <div class="input-group">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" id="fridgeSearch" name="fridgeSearch" autocomplete="off"
+            placeholder="Ej: Tomate..." aria-label="Buscar ingrediente de la nevera" [(ngModel)]="searchText"
+            (ngModelChange)="onSearch()">
+    </div>
+
+    @if (filtered.length > 0) {
+    <div class="list-group position-absolute w-100 shadow-sm mt-1 suggestion-dropdown">
+        @for (ing of filtered; track ing.id) {
+        <button class="list-group-item list-group-item-action" (click)="onAdd(ing.id)">
+            <span class="text-capitalize">{{ ing.name }}</span>
+        </button>
+        }
+    </div>
+    }
+</div>
+
+<div class="d-flex flex-wrap gap-2 mb-4">
+    @for (id of fridgeSelected; track id) {
+    <span class="badge bg-success d-flex align-items-center p-2 fs-6 shadow-sm fridge-tag">
+        <span class="text-capitalize">{{ getIngredientName(id) }}</span>
+        <i class="bi bi-x-circle-fill ms-2 text-white" style="cursor: pointer;"
+            (click)="onRemove(id)"></i>
+    </span>
+    }
+</div>
+
+<hr>
+<h6 class="fw-bold">Recetas compatibles:</h6>
+<div class="row g-3">
+    @if (fridgeSelected.length > 0) {
+    @if (matchedRecipes.length === 0) {
+    <div class="col-12">
+        <p class="text-muted">No se encontraron recetas con esos ingredientes.</p>
+    </div>
+    } @else {
+    @for (r of matchedRecipes; track r.id) {
+    <div class="col-12">
+        <div class="card shadow-sm" style="cursor: pointer;" (click)="viewRecipe.emit(r.id)">
+            <div class="card-body">
+                <h6 class="fw-bold mb-1">{{ r.nombre }}</h6>
+                <p class="small text-muted mb-0">{{ r.pasos }}</p>
+            </div>
+        </div>
+    </div>
+    }
+    }
+    } @else {
+    <div class="col-12">
+        <p class="text-muted">Busca al menos un ingrediente arriba para empezar.</p>
+    </div>
+    }
+</div>

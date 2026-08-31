@@ -1,0 +1,49 @@
+@use '../../../../styles/variables' as *;
+
+.navbar {
+  z-index: 1030;
+  padding: 8px 1rem;
+  min-height: calc(#{$navbar-top-height} + env(safe-area-inset-top, 0px));
+  padding-top: calc(8px + env(safe-area-inset-top, 0px));
+}
+
+.navbar .btn { min-height: unset; }
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-sm;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.nav-avatar-btn {
+  width: 50px;
+  height: 50px;
+  min-height: unset !important;
+  border: 2px solid $white !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.nav-install-btn {
+  width: 50px;
+  height: 50px;
+  min-height: unset !important;
+  border: 2px solid $white !important;
+  font-size: 1.1rem;
+}
+
+.nav-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: $white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}

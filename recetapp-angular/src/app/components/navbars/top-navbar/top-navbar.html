@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-primary shadow-sm">
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+            <img src="recetapp_logo_transparente.png" alt="RecetAPP" class="nav-logo me-2" /> RecetAPP
+        </span>
+        <div class="d-flex align-items-center gap-2">
+            @if (pwaInstallService.canInstall()) {
+            <button class="btn btn-outline-light rounded-circle nav-install-btn d-flex align-items-center justify-content-center"
+              type="button" (click)="pwaInstallService.installPwa()" title="Instalar APP">
+              <i class="bi bi-cloud-download"></i>
+            </button>
+            }
+            <span class="text-white small d-none d-sm-inline">{{ user.nombre_casa }}</span>
+            <button class="btn btn-link p-0 rounded-circle text-decoration-none nav-avatar-btn"
+                (click)="openProfile.emit()">
+                @if (user.foto) {
+                <img [src]="user.foto" class="rounded-circle nav-avatar" alt="Avatar">
+                } @else {
+                <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center nav-avatar">
+                    {{ (user.nombre || 'U')[0].toUpperCase() }}
+                </div>
+                }
+            </button>
+        </div>
+    </div>
+</nav>

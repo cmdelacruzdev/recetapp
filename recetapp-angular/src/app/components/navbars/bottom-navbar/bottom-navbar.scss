@@ -1,0 +1,39 @@
+@use '../../../../styles/variables' as *;
+
+:host { display: block; }
+
+nav.navbar {
+  padding: 10px 0;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  min-height: calc(#{$navbar-bottom-height} + env(safe-area-inset-bottom, 0px));
+  background-color: $white;
+  border-top: 1px solid $gray-300;
+}
+
+// En PWA standalone (iPhone), el layout 100dvh ya contempla la home indicator.
+// El :host se extiende hasta el borde inferior rellenando con el fondo de la
+// navbar para que no quede un hueco visible entre el nav y el borde de pantalla.
+:host-context(body.pwa-standalone) {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background-color: $white;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border: none;
+  color: $gray-500;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  border-radius: $radius-md;
+  transition: color 0.2s;
+  min-height: 44px;
+  min-width: 44px;
+
+  i { line-height: 1; }
+
+  &.active { font-weight: 600; }
+}

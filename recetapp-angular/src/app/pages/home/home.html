@@ -1,0 +1,106 @@
+<app-top-navbar [user]="appData.user" (openProfile)="openProfileModal()" />
+
+<main class="app-content">
+    @if (activeTab === 'dashboard') {
+    <app-dashboard-tab
+        [totalRecipes]="appData.recipes?.length || 0"
+        [ownRecipes]="ownRecipesCount"
+        [totalIngredients]="appData.ingredients?.length || 0"
+        [ownIngredients]="ownIngredientsCount"
+        [shoppingCount]="appData.shopping?.length || 0"
+        [dynamicTip]="dynamicTip"
+        (switchTab)="switchTab($event)"
+        (goToOwnRecipes)="goToOwnRecipes()"
+        (goToOwnIngredients)="goToOwnIngredients()" />
+    }
+
+    @if (activeTab === 'recipes') {
+    <app-recipes-tab
+        [recipes]="appData.recipes"
+        [showOwnOnly]="showOwnRecipes"
+        (showOwnOnlyChange)="showOwnRecipes = $event"
+        (openRecipe)="openRecipeModal($event)"
+        (addToShopping)="addRecipeToShopping($event)" />
+    }
+
+    @if (activeTab === 'planning') {
+    <app-planning-tab
+        [calendarDays]="calendarDays"
+        [calendarPadding]="calendarPadding"
+        [currentMonthName]="currentMonthName"
+        [weekDays]="weekDays"
+        [meals]="meals"
+        [planning]="appData.planning"
+        [recipes]="appData.recipes"
+        [selectedCalendarDay]="selectedCalendarDay"
+        [mealSearchText]="mealSearchText"
+        [mealSearchResults]="mealSearchResults"
+        [isCurrentMonth]="isCurrentMonth()"
+        [canGoNext]="isNextMonthAllowed()"
+        [canGoPrev]="isPrevMonthAllowed()"
+        [planningCleanupInfo]="planningCleanupInfo"
+        (prevMonth)="prevMonth()"
+        (nextMonth)="nextMonth()"
+        (goToCurrentMonth)="goToCurrentMonth()"
+        (selectDay)="selectCalendarDay($event)"
+        (searchMeal)="searchMeal($event)"
+        (selectMeal)="selectMeal($event)"
+        (clearMeal)="clearMeal($event)"
+        (addToShopping)="addRecipeToShopping($event)" />
+    }
+
+    @if (activeTab === 'ingredients') {
+    <app-ingredients-tab
+        [ingredients]="appData.ingredients"
+        [showOwnOnly]="showOwnIngredients"
+        (showOwnOnlyChange)="showOwnIngredients = $event"
+        (openIngredient)="openIngredientModal($event)"
+        (deleteIngredient)="deleteIngredient($event)" />
+    }
+
+    @if (activeTab === 'shopping') {
+    <app-shopping-tab
+        [items]="appData.shopping"
+        (addManual)="addManualShopping($event)"
+        (toggle)="toggleShopping($event)"
+        (remove)="removeShopping($event)"
+        (clear)="clearShopping()" />
+    }
+
+    @if (activeTab === 'fridge') {
+    <app-fridge-tab
+        [ingredients]="appData.ingredients"
+        [fridgeSelected]="fridgeSelected"
+        [matchedRecipes]="getMatchedRecipes()"
+        (addIngredient)="addFridgeIng($event)"
+        (removeIngredient)="removeFridgeIng($event)"
+        (viewRecipe)="openRecipeModal({ id: $event, viewMode: true })" />
+    }
+</main>
+
+<app-bottom-navbar [activeTab]="activeTab" (tabChange)="switchTab($event)" />
+
+<app-ingredient-modal
+    #ingredientModal
+    [ingredient]="{ id: '', name: '' }"
+    (save)="saveIngredient($event)" />
+
+<app-recipe-modal
+    #recipeModal
+    [ingredients]="appData.ingredients"
+    (save)="saveRecipe($event)"
+    (delete)="deleteRecipe($event)" />
+
+<app-profile-modal
+    #profileModal
+    [user]="appData.user"
+    [adminStats]="adminStats"
+    [editingProfile]="editingProfile"
+    [inviteEmail]="inviteEmail"
+    (save)="saveProfile($event)"
+    (logout)="logout()"
+    (inviteUser)="inviteUserToHouse($event)"
+    (resendInvitation)="resendInvitationToHouse($event)"
+    (deleteUser)="deleteHouseUser($event)"
+    (updateInviteEmail)="inviteEmail = $event"
+    (predefinedLoaded)="loadData()" />

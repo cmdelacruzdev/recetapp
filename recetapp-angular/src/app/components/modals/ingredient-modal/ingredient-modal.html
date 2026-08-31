@@ -1,0 +1,24 @@
+<div class="modal fade px-3 py-5" id="ingredientModal" tabindex="-1">
+    <div class="modal-backdrop-custom" (click)="hide()"></div>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title fw-bold">{{ localIngredient.id ? 'Editar' : 'Nuevo' }} Ingrediente</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="onSave()">
+                    <div class="mb-3">
+                        <label for="ingName" class="form-label">Nombre del ingrediente</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-egg"></i></span>
+                            <input type="text" class="form-control" id="ingName" name="ingName" autocomplete="off"
+                                [(ngModel)]="localIngredient.name" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

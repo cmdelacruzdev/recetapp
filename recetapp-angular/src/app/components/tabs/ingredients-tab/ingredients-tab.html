@@ -1,0 +1,73 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="fw-bold mb-0">Ingredientes</h5>
+    <button class="btn btn-primary btn-sm" (click)="openIngredient.emit({ id: '', name: '' })"
+        [disabled]="ingredients.length >= 750">
+        <i class="bi bi-plus-lg"></i> Nuevo
+    </button>
+</div>
+
+@if (ingredients.length >= 600) {
+<div class="alert alert-warning small py-2 px-3 mb-3 d-flex align-items-center gap-2">
+    <i class="bi bi-exclamation-triangle"></i>
+    <span>{{ ingredients.length }}/750 ingredientes. {{ 750 - ingredients.length > 0 ? 'Quedan ' + (750 - ingredients.length) + '.' : 'Límite alcanzado.' }}</span>
+</div>
+} @else {
+<div class="alert alert-info small py-2 px-3 mb-3 d-flex align-items-center gap-2">
+    <i class="bi bi-info-circle"></i>
+    <span>{{ ownCount }} propios / {{ ingredients.length }} totales.</span>
+</div>
+}
+
+<div class="row g-2 mb-3 align-items-center">
+    <div class="col">
+        <div class="input-group input-group-sm">
+            <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" id="ingredientsSearch" name="ingredientsSearch" autocomplete="off"
+                placeholder="Buscar ingrediente..." aria-label="Buscar ingrediente"
+                [(ngModel)]="searchText">
+        </div>
+    </div>
+    <div class="col-auto">
+        <div class="form-check form-check-inline own-filter mb-0"
+            (click)="toggleOwn()">
+            <input class="form-check-input" type="checkbox" [checked]="showOwnOnly" id="ownIngCheck" name="ownIng">
+            <label class="form-check-label text-nowrap small" for="ownIngCheck">Solo mios</label>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <ul class="list-group list-group-flush">
+        @for (ing of filtered; track ing.id) {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="text-capitalize">
+                {{ ing.name }}
+                @if (ing.isPredefined) {
+                <span class="badge bg-secondary ms-1" style="font-size: 0.6rem;">Predefinido</span>
+                }
+            </span>
+            @if (!ing.isPredefined) {
+            <div>
+                <button class="btn btn-outline-secondary btn-sm me-1"
+                    (click)="openIngredient.emit({ id: ing.id, name: ing.name })">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm"
+                    (click)="deleteIngredient.emit(ing.id)">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+            }
+        </li>
+        }
+    </ul>
+    @if (filtered.length === 0) {
+    <div class="list-group-item text-center text-muted py-3">
+        @if (showOwnOnly && !searchText.trim()) {
+        No has creado ingredientes todavia.
+        } @else {
+        No se encontraron ingredientes.
+        }
+    </div>
+    }
+</div>

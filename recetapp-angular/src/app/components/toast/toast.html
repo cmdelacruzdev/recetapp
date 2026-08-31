@@ -1,0 +1,8 @@
+<div class="toast-container">
+    @for (t of toasts; track t.id) {
+    <div class="toast-item toast-{{ t.type }}" (click)="dismiss(t.id)">
+        <i class="bi {{ icon(t.type) }} me-2"></i>
+        <span>{{ t.text }}</span>
+    </div>
+    }
+</div>

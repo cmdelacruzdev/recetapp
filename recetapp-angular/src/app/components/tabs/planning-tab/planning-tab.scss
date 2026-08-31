@@ -1,0 +1,95 @@
+@use '../../../../styles/variables' as *;
+
+.calendar-legend {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: $font-size-xs;
+  color: $gray-700;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dot-desayuno { background: $dot-desayuno; }
+.dot-comida { background: $dot-comida; }
+.dot-cena { background: $dot-cena; }
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  background: $gray-300;
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+.calendar-header {
+  text-align: center;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  color: $gray-600;
+  padding: 0.4rem 0;
+  background: $gray-200;
+}
+
+.calendar-cell {
+  aspect-ratio: 1;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  min-height: 44px;
+  transition: background 0.15s;
+
+  &.empty {
+    background: $gray-100;
+    cursor: default;
+  }
+
+  &.today {
+    background: rgba($primary, 0.08);
+  }
+
+  &.selected {
+    background: rgba($primary, 0.16);
+    box-shadow: inset 0 0 0 2px $primary;
+  }
+
+  &:not(.empty):active {
+    background: $gray-200;
+  }
+}
+
+.day-num {
+  font-size: $font-size-sm;
+  font-weight: 500;
+}
+
+.day-dots {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.calendar-detail { margin-top: 0.5rem; }
+
+.suggestion-dropdown {
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}

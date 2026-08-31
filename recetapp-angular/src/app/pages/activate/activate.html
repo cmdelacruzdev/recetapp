@@ -1,0 +1,53 @@
+<main class="form-signin w-100 m-auto d-flex align-items-center py-4"
+    style="height: 100vh; max-width: 350px; padding: 15px;">
+    <form (ngSubmit)="handleActivate()" class="w-100" novalidate>
+        <div class="text-center mb-3">
+            <img src="recetapp_logo_transparente.png" alt="RecetAPP" class="app-logo-transparente" />
+        </div>
+        <h1 class="h4 mb-3 fw-bold text-center">Activa tu cuenta</h1>
+        <p class="text-muted small text-center mb-3">
+            Completa tus datos para unirte a la casa que te ha invitado.
+        </p>
+
+        @if (errorMessage) {
+        <div class="alert alert-danger">{{ errorMessage }}</div>
+        }
+
+        <div class="form-floating input-with-icon mb-3">
+            <i class="bi bi-envelope"></i>
+            <input type="email" class="form-control" id="email" placeholder="Correo"
+                [ngModel]="email" name="email" readonly disabled autocomplete="username">
+            <label for="email">Usuario (tu correo)</label>
+        </div>
+        <div class="form-floating input-with-icon mb-3">
+            <i class="bi bi-person"></i>
+            <input type="text" class="form-control" id="nombre" placeholder="Tu Nombre"
+                [(ngModel)]="nombre" name="nombre" autocomplete="name" required>
+            <label for="nombre">Tu Nombre</label>
+        </div>
+        <div class="form-floating input-with-icon mb-3">
+            <i class="bi bi-shield-lock"></i>
+            <input type="password" class="form-control" id="tempPassword" placeholder="Contraseña temporal"
+                [(ngModel)]="tempPassword" name="tempPassword" autocomplete="off" required>
+            <label for="tempPassword">Contraseña temporal (del correo)</label>
+        </div>
+        <hr>
+        <div class="form-floating input-with-icon mb-3">
+            <i class="bi bi-lock"></i>
+            <input type="password" class="form-control" id="newPassword" placeholder="Nueva contraseña"
+                [(ngModel)]="newPassword" name="newPassword" autocomplete="new-password" required>
+            <label for="newPassword">Nueva contraseña</label>
+        </div>
+        <div class="form-floating input-with-icon mb-3">
+            <i class="bi bi-lock"></i>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Repite nueva contraseña"
+                [(ngModel)]="confirmPassword" name="confirmPassword" autocomplete="new-password" required>
+            <label for="confirmPassword">Repite nueva contraseña</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit" [disabled]="!token || !email">
+            Activar cuenta
+        </button>
+        <a routerLink="/login" class="w-100 btn btn-outline-secondary btn-sm">Volver al login</a>
+    </form>
+</main>

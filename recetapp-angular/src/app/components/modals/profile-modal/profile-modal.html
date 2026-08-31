@@ -1,0 +1,253 @@
+<div class="modal fade px-3 py-5" id="profileModal" tabindex="-1">
+    <div class="modal-backdrop-custom" (click)="hide()"></div>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title fw-bold">Mi Perfil ({{ user?.nombre_casa }})</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-3">
+                    @if (user?.foto) {
+                    <img [src]="user.foto" class="rounded-circle mb-2 shadow-sm profile-img-lg" alt="Avatar">
+                    } @else {
+                    <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center shadow-sm mx-auto profile-img-lg">
+                        <span class="text-white fs-1">{{ (user?.nombre || 'U')[0].toUpperCase() }}</span>
+                    </div>
+                    }
+                    <div class="text-muted small">
+                        <strong>{{ isAdmin ? '👑 Admin de la Casa' : '👤 Miembro de la Casa' }}</strong><br>
+                        {{ user?.username }}<br>
+                        @if (isSuperadmin) {
+                        <span class="badge bg-danger mt-1">⚡ Superadmin</span>
+                        }
+                    </div>
+                </div>
+
+                <form (ngSubmit)="onSave()">
+                    <div class="mb-3">
+                        <label for="profileName" class="form-label">Mi Nombre</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-person-badge"></i></span>
+                            <input type="text" class="form-control" id="profileName" name="profileName" autocomplete="name"
+                                [(ngModel)]="editingProfile.nombre" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="profileNombreCasa" class="form-label">Nombre de la Casa</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-house-door"></i></span>
+                            <input type="text" class="form-control" id="profileNombreCasa" name="profileNombreCasa"
+                                autocomplete="organization" [(ngModel)]="user.nombre_casa">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="profileFoto" class="form-label">Nueva Foto de Perfil</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-image"></i></span>
+                            <input type="file" class="form-control" id="profileFoto" name="profileFoto" accept="image/*"
+                                (change)="onFileChange($event)">
+                        </div>
+                    </div>
+                    @if (imagePreview) {
+                    <div class="text-center mb-3">
+                        <p class="small text-muted mb-2">Así se verá tu foto:</p>
+                        <div class="image-crop-preview mx-auto">
+                            <img [src]="imagePreview" alt="Preview">
+                        </div>
+                        <button type="button" class="btn btn-outline-danger btn-sm mt-2" (click)="clearPreview()">
+                            <i class="bi bi-x-lg"></i> Quitar foto
+                        </button>
+                    </div>
+                    } @else if (user?.foto && !isDefaultFoto) {
+                    <div class="text-center mb-3">
+                        <button type="button" class="btn btn-outline-danger btn-sm" (click)="onDeletePhoto()">
+                            <i class="bi bi-trash"></i> Eliminar foto actual
+                        </button>
+                    </div>
+                    }
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">Nueva Contraseña (opcional)</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" id="newPassword" name="newPassword"
+                                [(ngModel)]="editingProfile.new_password" autocomplete="new-password">
+                        </div>
+                    </div>
+                    @if (editingProfile.new_password) {
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Repite Nueva Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                                [(ngModel)]="editingProfile.confirm_password" autocomplete="new-password">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="currentPassword" class="form-label">Contraseña Actual (requerida para cambiarla)</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-shield-lock"></i></span>
+                            <input type="password" class="form-control" id="currentPassword" name="currentPassword"
+                                [(ngModel)]="editingProfile.current_password" autocomplete="current-password">
+                        </div>
+                    </div>
+                    }
+                    <button type="submit" class="btn btn-primary w-100 mb-4">Actualizar Perfil</button>
+                </form>
+
+                @if (adminStats) {
+                <hr>
+                <h6 class="fw-bold"><i class="bi bi-shield-lock"></i> Opciones de Administrador</h6>
+
+                <div class="card p-3 mb-3 bg-light border-0 shadow-sm">
+                    <h6 class="small">Añadir un miembro a la casa</h6>
+                    @if (adminStats?.house?.total_users !== undefined) {
+                    <p class="small text-muted mb-2">
+                        <i class="bi bi-info-circle"></i>
+                        {{ adminStats.house.total_users }} / 5 usuarios en esta casa
+                    </p>
+                    }
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white"><i class="bi bi-envelope-plus"></i></span>
+                        <input type="email" class="form-control" placeholder="Email del usuario..." id="inviteEmail"
+                            name="inviteEmail" autocomplete="off" aria-label="Email del usuario a invitar"
+                            [ngModel]="inviteEmail" (ngModelChange)="updateInviteEmail.emit($event)">
+                        <button class="btn btn-success" type="button" (click)="onInvite()">Invitar</button>
+                    </div>
+                </div>
+
+                <h6 class="fw-bold small">📊 Estadísticas: {{ user?.nombre_casa }}</h6>
+                <ul class="list-group small mb-4">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Recetas:
+                        <span class="badge bg-primary rounded-pill">{{ adminStats.house.total_recipes }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Ingredientes:
+                        <span class="badge bg-secondary rounded-pill">{{ adminStats.house.total_ingredients }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Usuarios:
+                        <span class="badge bg-info rounded-pill">{{ adminStats.house.total_users }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Espacio:
+                        <span class="badge bg-dark rounded-pill">{{ adminStats.house.storage_mb }} MB</span>
+                    </li>
+                </ul>
+
+                @if (adminStats.global) {
+                <h6 class="fw-bold small">🌍 Estadísticas Globales</h6>
+                <ul class="list-group small mb-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-bg-dark">Casas:
+                        <span class="badge bg-light text-dark rounded-pill">{{ adminStats.global.total_houses }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-bg-dark">Usuarios:
+                        <span class="badge bg-light text-dark rounded-pill">{{ adminStats.global.total_users }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-bg-dark">Servidor:
+                        <span class="badge bg-danger rounded-pill">{{ adminStats.global.storage_mb }} MB</span>
+                    </li>
+                </ul>
+
+                <h6 class="fw-bold small mt-2"><i class="bi bi-database-gear"></i> Gestión del Sistema</h6>
+                <button class="btn btn-outline-warning w-100 mb-2" (click)="onSuperadminLoadPredefined()">
+                    <i class="bi bi-cloud-download"></i> Recargar Recetas Base
+                </button>
+                <button class="btn btn-outline-secondary w-100 mb-3" (click)="onSuperadminClearCache()">
+                    <i class="bi bi-trash3"></i> Limpiar Caché del Servidor
+                </button>
+                }
+
+                <h6 class="fw-bold small mt-3"><i class="bi bi-people"></i> Usuarios en la Casa</h6>
+                <ul class="list-group mb-4 shadow-sm">
+                    @for (u of adminStats.house_users; track u.username) {
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        (click)="showUserDetail(u)" style="cursor: pointer;">
+                        <div class="d-flex align-items-center gap-2">
+                            @if (u.foto) {
+                            <img [src]="u.foto" class="rounded-circle"
+                                style="width: 36px; height: 36px; object-fit: cover; min-width: 36px;"
+                                alt="Avatar">
+                            } @else {
+                            <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center"
+                                style="width: 36px; height: 36px; min-width: 36px;">
+                                <span class="text-white" style="font-size: 0.85rem;">{{ (u.nombre || 'U')[0].toUpperCase() }}</span>
+                            </div>
+                            }
+                            <div>
+                                <strong>{{ u.nombre }}</strong> <small class="text-muted">({{ u.username }})</small><br>
+                                @if (u.role === 'admin') {
+                                <span class="badge bg-primary">Admin</span>
+                                } @else {
+                                <span class="badge bg-secondary">User</span>
+                                }
+                            </div>
+                        </div>
+                        @if (isAdmin || user.username === u.username) {
+                        <button class="btn btn-outline-danger btn-sm" (click)="onDeleteUser(u); $event.stopPropagation()"
+                            title="Eliminar usuario">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                        }
+                    </li>
+                    }
+                </ul>
+                }
+
+                @if (selectedHouseUser) {
+                <div class="user-detail-overlay" (click)="closeUserDetail()">
+                    <div class="user-detail-modal" (click)="$event.stopPropagation()">
+                        <div class="mb-3">
+                            @if (selectedHouseUser.foto) {
+                            <img [src]="selectedHouseUser.foto" class="user-detail-avatar shadow" alt="Avatar">
+                            } @else {
+                            <div class="user-detail-avatar-fallback bg-secondary shadow">
+                                <span class="text-white fs-3">{{ (selectedHouseUser.nombre || 'U')[0].toUpperCase() }}</span>
+                            </div>
+                            }
+                        </div>
+                        <h5 class="fw-bold mb-1">{{ selectedHouseUser.nombre }}</h5>
+                        <p class="text-muted small mb-2">{{ selectedHouseUser.username }}</p>
+                        <span class="badge {{ selectedHouseUser.role === 'admin' ? 'bg-primary' : 'bg-secondary' }} mb-2">
+                            {{ selectedHouseUser.role === 'admin' ? 'Admin' : 'User' }}
+                        </span>
+                        <p class="small mb-1"><i class="bi bi-house me-1"></i>{{ user?.nombre_casa }}</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar me-1"></i>{{ selectedHouseUser.created_at }}</p>
+                        <button class="btn btn-outline-secondary btn-sm" (click)="closeUserDetail()">Cerrar</button>
+                    </div>
+                </div>
+                }
+
+                <hr>
+                <div class="text-center mb-4">
+                    <img src="recetapp_logo_transparente.png" alt="RecetAPP" class="mb-2" style="height: 48px; width: auto;">
+                    <h6 class="fw-bold mb-1">RecetAPP</h6>
+                    <p class="text-muted small mb-0">Gestiona tus recetas, planning semanal y lista de la compra.</p>
+                </div>
+
+                <div class="bg-light rounded p-3 mb-3 border text-start">
+                    <p class="small mb-2"><strong>Desarrollado por: </strong>Carlos Manuel de la Cruz Romero</p>
+                    <p class="small mb-0"><strong>Soporte: </strong> <a href="mailto:hola@cmdelacruzdev.es"
+                            class="text-decoration-none">hola@cmdelacruzdev.es</a></p>
+                </div>
+
+                <div class="text-center mb-3">
+                    <span class="badge bg-primary rounded-pill px-3">Version {{ appVersion }}</span>
+                </div>
+
+                @if (appVersionNews) {
+                <div class="bg-light rounded p-3 mb-4 border">
+                    <h6 class="fw-bold mb-2" style="font-size: 0.85rem;">Novedades de la version:</h6>
+                    <p class="small text-muted mb-0" style="white-space: pre-line; font-size: 0.8rem;">{{
+                        appVersionNews }}</p>
+                </div>
+                }
+
+                <p class="x-small text-muted text-center mb-4">&copy; 2026 RecetAPP. Todos los derechos reservados.</p>
+
+                <hr>
+                <button class="btn btn-danger btn-sm w-100" (click)="onLogout()">
+                    <i class="bi bi-box-arrow-left me-1"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-image-crop-modal #imageCropModal />

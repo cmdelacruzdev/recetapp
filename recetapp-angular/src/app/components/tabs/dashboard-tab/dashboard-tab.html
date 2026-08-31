@@ -1,0 +1,39 @@
+<div class="p-4 mb-4 bg-white rounded-3 shadow-sm border">
+    <h2>Hola de nuevo! 👋</h2>
+    <p class="text-muted mb-3">Gestiona tus menus semanales y tu lista de la compra de forma rapida.</p>
+
+    <div class="tip-box mb-4 p-3 rounded-3 bg-light border">
+        <small class="text-muted"><i class="bi bi-lightbulb text-warning me-1"></i> {{ dynamicTip }}</small>
+    </div>
+
+    <hr>
+    <div class="row g-3">
+        <div class="col-6">
+            <button class="btn btn-outline-primary stat-btn w-100 py-3" (click)="goToOwnRecipes.emit()">
+                <i class="bi bi-journal-richtext stat-icon"></i>
+                <span class="stat-title">Mis Recetas</span>
+                <span class="d-flex flex-wrap justify-content-center gap-1 mt-1">
+                    <span class="badge bg-primary">{{ ownRecipes }} propias</span>
+                    <span class="badge bg-secondary">{{ totalRecipes }} totales</span>
+                </span>
+            </button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-outline-success stat-btn w-100 py-3" (click)="goToOwnIngredients.emit()">
+                <i class="bi bi-list-ul stat-icon"></i>
+                <span class="stat-title">Mis Ingredientes</span>
+                <span class="d-flex flex-wrap justify-content-center gap-1 mt-1">
+                    <span class="badge bg-success">{{ ownIngredients }} propios</span>
+                    <span class="badge bg-secondary">{{ totalIngredients }} totales</span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    @if (shoppingCount > 0) {
+    <div class="mt-3 p-2 bg-light rounded text-center">
+        <small class="text-muted"><i class="bi bi-cart3 me-1"></i> Tienes {{ shoppingCount }}
+            producto(s) en tu lista de la compra.</small>
+    </div>
+    }
+</div>

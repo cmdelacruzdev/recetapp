@@ -1,0 +1,9 @@
+@use '../../../styles/variables' as *;
+
+:host { display: block; }
+
+.app-logo-transparente {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

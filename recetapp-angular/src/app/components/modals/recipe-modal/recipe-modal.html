@@ -1,0 +1,115 @@
+<div class="modal fade px-3 py-5" id="recipeModal" tabindex="-1">
+    <div class="modal-backdrop-custom" (click)="hide()"></div>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title fw-bold">{{ isViewMode ? editingRecipe.nombre : (editingRecipe.id ? 'Editar Receta' : 'Nueva Receta') }}</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                @if (isViewMode) {
+                @if (editingRecipe.imagen) {
+                <img [src]="editingRecipe.imagen" class="img-fluid rounded mb-3 recipe-modal-img">
+                }
+                <h6 class="fw-bold">Ingredientes:</h6>
+                <ul class="list-group list-group-flush mb-3">
+                    @for (ing of editingRecipe.ingredientes; track $index) {
+                    <li class="list-group-item d-flex justify-content-between p-1">
+                        <span class="text-capitalize">{{ ing.nombre }}</span>
+                        <strong>{{ ing.quantity }}</strong>
+                    </li>
+                    }
+                </ul>
+                <h6 class="fw-bold">Preparación:</h6>
+                <p style="white-space: pre-line;">{{ editingRecipe.pasos }}</p>
+                } @else {
+                <form id="recipeForm" (ngSubmit)="onSave()">
+                    <div class="mb-3">
+                        <label for="recName" class="form-label">Nombre de la receta</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-journal-richtext"></i></span>
+                            <input type="text" class="form-control" name="recName" id="recName" autocomplete="off"
+                                [(ngModel)]="editingRecipe.nombre" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recImage" class="form-label">Imagen</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-image"></i></span>
+                            <input type="file" class="form-control" id="recImage" name="recImage" accept="image/*"
+                                (change)="onFileChange($event)">
+                        </div>
+                    </div>
+                    @if (imagePreview) {
+                    <div class="text-center mb-3">
+                        <p class="small text-muted mb-1">Preview:</p>
+                        <img [src]="imagePreview" class="rounded recipe-img-preview" alt="Preview">
+                        <div>
+                            <button type="button" class="btn btn-outline-danger btn-sm mt-2" (click)="clearPreview()">
+                                <i class="bi bi-x-lg"></i> Quitar foto
+                            </button>
+                        </div>
+                    </div>
+                    } @else if (editingRecipe.imagen && !isDefaultImage) {
+                    <div class="text-center mb-3">
+                        <button type="button" class="btn btn-outline-danger btn-sm" (click)="onDeleteImage()">
+                            <i class="bi bi-trash"></i> Eliminar foto actual
+                        </button>
+                    </div>
+                    }
+                    <div class="mb-3">
+                        <label for="recSteps" class="form-label">Pasos</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-list-ul"></i></span>
+                            <textarea class="form-control" name="recSteps" id="recSteps" rows="3" required
+                                [(ngModel)]="editingRecipe.pasos"></textarea>
+                        </div>
+                    </div>
+                    <h6 class="form-label fw-semibold d-block">Ingredientes</h6>
+                    <div id="recipeIngredientsList">
+                        @for (ing of editingRecipe.ingredientes; track $index) {
+                        <div class="mb-2">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-white"><i class="bi bi-egg"></i></span>
+                                <input type="text" class="form-control" placeholder="Nombre del ingrediente"
+                                    [id]="'ingName_' + $index" [name]="'ingName_' + $index"
+                                    aria-label="Nombre del ingrediente"
+                                    [(ngModel)]="ing.nombre"
+                                    (ngModelChange)="searchIngredient($index, $event)"
+                                    (focus)="showIngDropdown = $index" autocomplete="off" required>
+                                <input type="text" class="form-control" placeholder="Cantidad"
+                                    [id]="'ingQty_' + $index" [name]="'ingQty_' + $index"
+                                    aria-label="Cantidad" autocomplete="off"
+                                    [(ngModel)]="ing.quantity" required>
+                                <button type="button" class="btn btn-outline-danger"
+                                    (click)="removeIngredientRow($index)"><i class="bi bi-x"></i></button>
+                            </div>
+                            @if (showIngDropdown === $index && recipeIngResults.length > 0 && ing.nombre.trim()) {
+                            <div class="list-group list-group-flush shadow-sm mt-1 suggestion-dropdown">
+                                @for (found of recipeIngResults; track found.id) {
+                                <button type="button"
+                                    class="list-group-item list-group-item-action py-1 px-2 small"
+                                    (click)="selectIngredient(found)">
+                                    {{ found.name }}
+                                </button>
+                                }
+                            </div>
+                            }
+                        </div>
+                        }
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary btn-sm mb-3"
+                        (click)="addIngredientRow()">+ Añadir ingrediente</button>
+                    <button type="submit" class="btn btn-primary w-100">Guardar Receta</button>
+                    @if (editingRecipe.id && !editingRecipe.isPredefined) {
+                    <button type="button" class="btn btn-outline-danger w-100 mt-2" (click)="onDelete()">
+                        <i class="bi bi-trash"></i> Eliminar Receta
+                    </button>
+                    }
+                </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<app-image-crop-modal #imageCropModal />

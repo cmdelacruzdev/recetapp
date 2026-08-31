@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-white border-top shadow">
+    <div class="container justify-content-around">
+        @for (tab of tabs; track tab.key) {
+        <button class="btn nav-btn" [ngClass]="{'text-primary active': activeTab === tab.key}"
+            (click)="onTab(tab.key)" [title]="tab.label">
+            <i class="bi {{ tab.icon }} fs-1"></i>
+        </button>
+        }
+    </div>
+</nav>

@@ -1,0 +1,11 @@
+@use '../../../../styles/variables' as *;
+
+.fridge-tag {
+  font-size: $font-size-sm;
+}
+
+.suggestion-dropdown {
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}

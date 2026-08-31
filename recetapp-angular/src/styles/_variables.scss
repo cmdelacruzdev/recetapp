@@ -1,0 +1,49 @@
+// ===== RecetAPP Design Tokens =====
+
+// -- Colors --
+$primary: #0d6efd;
+$primary-hover: #0b5ed7;
+$primary-rgb: 13, 110, 253;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
+$dark: #1a1a1a;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$white: #ffffff;
+$canvas: #f5f6fa;
+
+// -- Typography --
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size-xs: 0.7rem;
+$font-size-sm: 0.8rem;
+$font-size-md: 0.9rem;
+$font-size-base: 1rem;
+
+// -- Spacing --
+$navbar-top-height: 72px;
+$navbar-bottom-height: 72px;
+$content-padding: 1rem;
+
+// -- Border radius --
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+
+// -- Shadows --
+$shadow-sm: 0 2px 8px rgba(26, 26, 26, 0.08);
+$shadow-md: 0 4px 12px rgba(26, 26, 26, 0.12);
+$shadow-lg: 0 8px 24px rgba(26, 26, 26, 0.15);
+
+// -- Calendar dots --
+$dot-desayuno: #ffc107;
+$dot-comida: #28a745;
+$dot-cena: #0d6efd;

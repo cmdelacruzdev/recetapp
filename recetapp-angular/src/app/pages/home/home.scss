@@ -1,0 +1,19 @@
+@use '../../../styles/variables' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+/* ---- CONTENT (Layout Guards - scroll encapsulado entre navs) ---- */
+.app-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+  padding: $content-padding;
+}

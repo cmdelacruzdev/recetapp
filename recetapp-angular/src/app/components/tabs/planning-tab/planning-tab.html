@@ -1,0 +1,114 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <button class="btn btn-sm btn-outline-primary" (click)="prevMonth.emit()" [disabled]="!canGoPrev">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+    <h5 class="fw-bold mb-0 text-capitalize">{{ currentMonthName }}</h5>
+    <button class="btn btn-sm btn-outline-primary" (click)="nextMonth.emit()" [disabled]="!canGoNext">
+        <i class="bi bi-chevron-right"></i>
+    </button>
+</div>
+
+@if (!isCurrentMonth) {
+<div class="text-center mb-2">
+    <button class="btn btn-sm btn-link" (click)="goToCurrentMonth.emit()">Volver al mes actual</button>
+</div>
+}
+
+<div class="alert alert-info small py-2 px-3 mb-3 d-flex align-items-center gap-2">
+    <i class="bi bi-info-circle"></i>
+    <span>Los plannings de más de 1 mes se eliminan automáticamente.</span>
+</div>
+
+<div class="calendar-legend mb-3">
+    <span class="legend-item"><span class="dot dot-desayuno"></span>Desayuno</span>
+    <span class="legend-item"><span class="dot dot-comida"></span>Comida</span>
+    <span class="legend-item"><span class="dot dot-cena"></span>Cena</span>
+</div>
+
+<div class="calendar-grid mb-3">
+    @for (wd of weekDays; track wd) {
+    <div class="calendar-header">{{ wd }}</div>
+    }
+    @for (p of calendarPadding; track $index) {
+    <div class="calendar-cell empty"></div>
+    }
+    @for (day of calendarDays; track day.dateString) {
+    <div class="calendar-cell" [class.today]="day.isToday"
+        [class.selected]="selectedCalendarDay?.dateString === day.dateString"
+        (click)="selectDay.emit(day)">
+        <span class="day-num">{{ day.dayNum }}</span>
+        @if (hasPlanning(day.dateString)) {
+        <div class="day-dots">
+            @if (planning[day.dateString]?.desayuno) {
+            <span class="dot dot-desayuno"></span>
+            }
+            @if (planning[day.dateString]?.comida) {
+            <span class="dot dot-comida"></span>
+            }
+            @if (planning[day.dateString]?.cena) {
+            <span class="dot dot-cena"></span>
+            }
+        </div>
+        }
+    </div>
+    }
+</div>
+
+@if (selectedCalendarDay) {
+<div class="calendar-detail card shadow-sm">
+    <div class="card-body p-3">
+        <h6 class="fw-bold mb-2">
+            {{ selectedCalendarDay.dayName | titlecase }} {{ selectedCalendarDay.dayNum }}
+            @if (selectedCalendarDay.isToday) { <span class="badge bg-primary ms-1">Hoy</span> }
+        </h6>
+        @if (isPastDay(selectedCalendarDay.dateString)) {
+        <p class="text-muted small mb-0"><i class="bi bi-lock me-1"></i>No se puede editar el planning de días anteriores.</p>
+        @for (meal of meals; track meal) {
+        @if (planning[selectedCalendarDay.dateString]?.[meal]) {
+        <div class="d-flex align-items-center mt-2">
+            <span class="badge bg-secondary text-capitalize me-2" style="width: 80px; font-size: 0.7rem;">{{ meal }}</span>
+            <span class="small">{{ getRecipeName(planning[selectedCalendarDay.dateString][meal]) }}</span>
+        </div>
+        }
+        }
+        } @else {
+        @for (meal of meals; track meal) {
+        @let key = selectedCalendarDay.dateString + '_' + meal;
+        <div class="mb-2">
+            <label [for]="'mealSearch_' + key" class="text-capitalize fw-bold small text-secondary">{{ meal }}</label>
+            <div class="position-relative">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-text bg-white"><i class="bi bi-search small"></i></span>
+                    <input type="text" [id]="'mealSearch_' + key" [name]="'mealSearch_' + key"
+                        class="form-control" placeholder="Buscar receta..." autocomplete="off"
+                        [ngModel]="mealSearchText[key] || getRecipeName(planning[selectedCalendarDay.dateString]?.[meal])"
+                        (ngModelChange)="searchMeal.emit({ day: selectedCalendarDay.dateString, meal: meal, text: $event })">
+                    @if (planning[selectedCalendarDay.dateString]?.[meal]) {
+                    <button class="btn btn-outline-danger btn-sm"
+                        (click)="clearMeal.emit({ day: selectedCalendarDay.dateString, meal: meal })" title="Quitar">
+                        <i class="bi bi-x"></i>
+                    </button>
+                    <button class="btn btn-outline-success btn-sm"
+                        (click)="addToShopping.emit(planning[selectedCalendarDay.dateString][meal])"
+                        title="Añadir ingredientes a la compra">
+                        <i class="bi bi-cart-plus"></i>
+                    </button>
+                    }
+                </div>
+                @if (getMealResults(key).length > 0) {
+                <div class="list-group position-absolute w-100 shadow-sm mt-1 suggestion-dropdown">
+                    @for (recipe of getMealResults(key); track recipe.id) {
+                    <button class="list-group-item list-group-item-action py-1 px-2 small"
+                        (click)="selectMeal.emit({ day: selectedCalendarDay.dateString, meal: meal, recipe: recipe })">
+                        {{ recipe.nombre }}
+                    </button>
+                    }
+                </div>
+                }
+            </div>
+        </div>
+        }
+        }
+    </div>
+</div>
+}

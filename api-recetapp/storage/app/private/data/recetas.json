@@ -1,0 +1,1480 @@
+[
+  {
+    "id": "001",
+    "nombre": "Tortilla de patatas",
+    "pasos": "1. Pelar y cortar las patatas en rodajas finas.\n2. Picar la cebolla en juliana.\n3. Freír las patatas y la cebolla en aceite de oliva a fuego medio-bajo hasta que estén tiernas.\n4. Batir los huevos con sal.\n5. Mezclar las patatas con el huevo batido.\n6. Cuajar la tortilla en la sartén a fuego medio, dándole la vuelta con un plato.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "004", "quantity": "6 unidades" },
+      { "ingredient_id": "005", "quantity": "4 unidades" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "003", "quantity": "100 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "002",
+    "nombre": "Paella Valenciana",
+    "pasos": "1. Sofreír el pollo y el conejo en aceite de oliva.\n2. Añadir las judías verdes y las habas.\n3. Agregar el tomate rallado y el pimentón.\n4. Incorporar el arroz y rehogar.\n5. Añadir el caldo caliente, el azafrán y la sal.\n6. Cocinar a fuego medio durante 18 minutos.\n7. Dejar reposar 5 minutos antes de servir.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "048", "quantity": "1/2 unidad" },
+      { "ingredient_id": "169", "quantity": "1/4 unidad" },
+      { "ingredient_id": "022", "quantity": "400 g" },
+      { "ingredient_id": "017", "quantity": "150 g" },
+      { "ingredient_id": "019", "quantity": "100 g" },
+      { "ingredient_id": "001", "quantity": "2 unidades" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "080", "quantity": "1 cucharada" },
+      { "ingredient_id": "082", "quantity": "1 pizca" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "003",
+    "nombre": "Gazpacho Andaluz",
+    "pasos": "1. Lavar y trocear los tomates, pepino, pimiento y cebolla.\n2. Triturar todos los ingredientes con aceite de oliva, vinagre y sal.\n3. Añadir un poco de agua fría para ajustar la textura.\n4. Pasar por un colador si se desea más fino.\n5. Enfriar en nevera al menos 2 horas antes de servir.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "001", "quantity": "1 kg" },
+      { "ingredient_id": "010", "quantity": "1/2 unidad" },
+      { "ingredient_id": "002", "quantity": "1/4 unidad" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "029", "quantity": "2 cucharadas" },
+      { "ingredient_id": "008", "quantity": "al gusto" },
+      { "ingredient_id": "006", "quantity": "1 diente" }
+    ]
+  },
+  {
+    "id": "004",
+    "nombre": "Pisto Manchego",
+    "pasos": "1. Cortar todos los vegetales en dados pequeños.\n2. Sofreír la cebolla y el ajo en aceite de oliva.\n3. Añadir el calabacín, berenjena y pimientos.\n4. Incorporar el tomate triturado y el azúcar.\n5. Cocinar a fuego lento durante 40 minutos.\n6. Salpimentar al gusto.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "013", "quantity": "1 unidad" },
+      { "ingredient_id": "014", "quantity": "1 unidad" },
+      { "ingredient_id": "010", "quantity": "1 unidad" },
+      { "ingredient_id": "011", "quantity": "1 unidad" },
+      { "ingredient_id": "068", "quantity": "400 g" },
+      { "ingredient_id": "003", "quantity": "100 ml" },
+      { "ingredient_id": "027", "quantity": "1 cucharadita" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "005",
+    "nombre": "Gambas al ajillo",
+    "pasos": "1. Pelar las gambas y reservar.\n2. Calentar el aceite de oliva en una cazuela de barro.\n3. Dorar los ajos laminados sin quemar.\n4. Añadir las gambas y saltear 2-3 minutos.\n5. Agregar el perejil picado y un chorrito de vino blanco.\n6. Servir caliente con pan.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "062", "quantity": "500 g" },
+      { "ingredient_id": "006", "quantity": "4 dientes" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "007", "quantity": "1 puñado" },
+      { "ingredient_id": "085", "quantity": "50 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "006",
+    "nombre": "Lentejas con chorizo",
+    "pasos": "1. Poner las lentejas en remojo la noche anterior.\n2. Sofreír cebolla, ajo y pimiento en aceite de oliva.\n3. Añadir el chorizo en rodajas y sofreír.\n4. Incorporar las lentejas, tomate y laurel.\n5. Cubrir con agua y cocinar 40-50 minutos.\n6. Salpimentar al final.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "020", "quantity": "400 g" },
+      { "ingredient_id": "052", "quantity": "150 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "010", "quantity": "1 unidad" },
+      { "ingredient_id": "001", "quantity": "2 unidades" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "079", "quantity": "1 hoja" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "007",
+    "nombre": "Bacalao al pil pil",
+    "pasos": "1. Desalar el bacalao 48 horas antes.\n2. Secar el bacalao y dorarlo en aceite de oliva.\n3. Retirar el bacalao y añadir los ajos laminados.\n4. Agregar las guindillas y el perejil.\n5. Regar con el aceite de la sartén y remover hasta que ligue la salsa.\n6. Servir el bacalao con la salsa por encima.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "056", "quantity": "4 lomos" },
+      { "ingredient_id": "006", "quantity": "4 dientes" },
+      { "ingredient_id": "003", "quantity": "200 ml" },
+      { "ingredient_id": "007", "quantity": "1 puñado" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "008",
+    "nombre": "Calamares a la romana",
+    "pasos": "1. Limpiar los calamares y cortarlos en anillas.\n2. Preparar una mezcla de harina y sal.\n3. Rebozar las anillas en la harina.\n4. Freír en abundante aceite caliente hasta dorar.\n5. Escurrir sobre papel absorbente.\n6. Servir con limón.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "060", "quantity": "500 g" },
+      { "ingredient_id": "025", "quantity": "200 g" },
+      { "ingredient_id": "003", "quantity": "500 ml" },
+      { "ingredient_id": "030", "quantity": "1 unidad" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "009",
+    "nombre": "Ensalada César Mediterránea",
+    "pasos": "1. Lavar y trocear la lechuga.\n2. Hacer unos croutons con pan frito.\n3. Preparar una vinagreta con aceite, vinagre, mostaza y anchoas.\n4. Mezclar todos los ingredientes.\n5. Añadir queso parmesano rallado por encima.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "150", "quantity": "1 unidad" },
+      { "ingredient_id": "047", "quantity": "2 pechugas" },
+      { "ingredient_id": "024", "quantity": "4 rebanadas" },
+      { "ingredient_id": "089", "quantity": "1 cucharada" },
+      { "ingredient_id": "101", "quantity": "4 filetes" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "029", "quantity": "2 cucharadas" },
+      { "ingredient_id": "042", "quantity": "50 g" }
+    ]
+  },
+  {
+    "id": "010",
+    "nombre": "Sopa de pescado y marisco",
+    "pasos": "1. Sofreír cebolla, ajo y pimiento.\n2. Añadir el tomate triturado y el pimentón.\n3. Incorporar el pescado y marisco.\n4. Cubrir con caldo de pescado y cocinar 20 minutos.\n5. Servir caliente.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "055", "quantity": "300 g" },
+      { "ingredient_id": "062", "quantity": "150 g" },
+      { "ingredient_id": "063", "quantity": "200 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "010", "quantity": "1 unidad" },
+      { "ingredient_id": "068", "quantity": "200 g" },
+      { "ingredient_id": "083", "quantity": "1 l" },
+      { "ingredient_id": "080", "quantity": "1 cucharada" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "011",
+    "nombre": "Albóndigas en salsa",
+    "pasos": "1. Mezclar la carne picada con huevo, pan rallado y perejil.\n2. Formar albóndigas y freírlas.\n3. Preparar una salsa con cebolla, ajo, tomate y vino.\n4. Cocer las albóndigas en la salsa 20 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "047", "quantity": "500 g" },
+      { "ingredient_id": "098", "quantity": "100 g" },
+      { "ingredient_id": "004", "quantity": "1 unidad" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "068", "quantity": "400 g" },
+      { "ingredient_id": "085", "quantity": "50 ml" },
+      { "ingredient_id": "007", "quantity": "1 puñado" },
+      { "ingredient_id": "003", "quantity": "100 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "012",
+    "nombre": "Merluza a la vasca",
+    "pasos": "1. Poner las almejas en agua con sal para que suelten arena.\n2. Dorar los ajos en aceite de oliva.\n3. Añadir la merluza y las almejas.\n4. Agregar el vino blanco y el perejil.\n5. Cocinar 10 minutos a fuego medio.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "055", "quantity": "4 lomos" },
+      { "ingredient_id": "064", "quantity": "500 g" },
+      { "ingredient_id": "006", "quantity": "3 dientes" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "085", "quantity": "100 ml" },
+      { "ingredient_id": "007", "quantity": "1 puñado" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "013",
+    "nombre": "Pimientos rellenos de bacalao",
+    "pasos": "1. Asar los pimientos y pelarlos.\n2. Desmigar el bacalao y mezclar con cebolla y ajo pochados.\n3. Rellenar los pimientos con la mezcla.\n4. Cubrir con bechamel y gratinar.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "066", "quantity": "8 unidades" },
+      { "ingredient_id": "056", "quantity": "400 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "045", "quantity": "500 ml" },
+      { "ingredient_id": "025", "quantity": "50 g" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "014",
+    "nombre": "Espárragos con huevo poché",
+    "pasos": "1. Cocer los espárragos al vapor.\n2. Pochar los huevos en agua con vinagre.\n3. Colocar los espárragos y los huevos en un plato.\n4. Aliñar con aceite de oliva y sal.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "015", "quantity": "12 unidades" },
+      { "ingredient_id": "004", "quantity": "4 unidades" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "029", "quantity": "1 cucharada" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "015",
+    "nombre": "Fabada asturiana",
+    "pasos": "1. Poner las fabes en remojo 12 horas.\n2. Cocer las fabes con agua y sal.\n3. Añadir el chorizo, morcilla y tocino.\n4. Cocinar a fuego lento 3 horas.\n5. Dejar reposar y servir.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "130", "quantity": "500 g" },
+      { "ingredient_id": "052", "quantity": "1 unidad" },
+      { "ingredient_id": "111", "quantity": "1 unidad" },
+      { "ingredient_id": "051", "quantity": "150 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" },
+      { "ingredient_id": "079", "quantity": "1 hoja" }
+    ]
+  },
+  {
+    "id": "016",
+    "nombre": "Cocido madrileño",
+    "pasos": "1. Cocer los garbanzos con agua y sal.\n2. Añadir la carne, el tocino y el chorizo.\n3. Incorporar las verduras y cocer todo junto.\n4. Servir por separado: caldo, verduras y carnes.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "021", "quantity": "400 g" },
+      { "ingredient_id": "047", "quantity": "200 g" },
+      { "ingredient_id": "050", "quantity": "200 g" },
+      { "ingredient_id": "052", "quantity": "1 unidad" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "012", "quantity": "1 unidad" },
+      { "ingredient_id": "005", "quantity": "2 unidades" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "017",
+    "nombre": "Salmorejo cordobés",
+    "pasos": "1. Triturar el tomate, pan, ajo, aceite y sal.\n2. Emulsionar hasta obtener una crema fina.\n3. Enfriar en nevera.\n4. Servir con huevo duro y jamón picado.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "001", "quantity": "1 kg" },
+      { "ingredient_id": "024", "quantity": "200 g" },
+      { "ingredient_id": "006", "quantity": "1 diente" },
+      { "ingredient_id": "003", "quantity": "100 ml" },
+      { "ingredient_id": "004", "quantity": "2 unidades" },
+      { "ingredient_id": "053", "quantity": "100 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "018",
+    "nombre": "Pulpo a la gallega",
+    "pasos": "1. Cocer el pulpo en agua hirviendo 30 minutos.\n2. Cortar en rodajas y colocar en un plato de madera.\n3. Aliñar con aceite de oliva, pimentón y sal.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "108", "quantity": "1 kg" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "080", "quantity": "1 cucharada" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "019",
+    "nombre": "Espinacas con garbanzos",
+    "pasos": "1. Cocer los garbanzos.\n2. Sofreír cebolla, ajo y comino.\n3. Añadir las espinacas y rehogar.\n4. Incorporar los garbanzos y cocinar 5 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "021", "quantity": "400 g" },
+      { "ingredient_id": "154", "quantity": "300 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "075", "quantity": "1 cucharadita" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "020",
+    "nombre": "Arroz caldoso con bogavante",
+    "pasos": "1. Sofreír el bogavante en aceite de oliva.\n2. Añadir cebolla, ajo y tomate.\n3. Incorporar el arroz y el caldo de pescado.\n4. Cocinar 18 minutos a fuego medio.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "105", "quantity": "1 unidad" },
+      { "ingredient_id": "022", "quantity": "400 g" },
+      { "ingredient_id": "083", "quantity": "1 l" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "001", "quantity": "2 unidades" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "082", "quantity": "1 pizca" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "021",
+    "nombre": "Pechuga de pollo a la plancha",
+    "pasos": "1. Sazonar las pechugas con sal y pimienta.\n2. Calentar una plancha con aceite de oliva.\n3. Hacer las pechugas 5 minutos por cada lado.\n4. Servir con ensalada o verduras.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "047", "quantity": "2 unidades"},
+      {"ingredient_id": "003", "quantity": "30 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"},
+      {"ingredient_id": "009", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "022",
+    "nombre": "Ensalada de tomate y cebolla",
+    "pasos": "1. Cortar los tomates en rodajas.\n2. Cortar la cebolla en aros finos.\n3. Aliñar con aceite, vinagre y sal.\n4. Decorar con orégano.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "001", "quantity": "4 unidades"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "003", "quantity": "30 ml"},
+      {"ingredient_id": "029", "quantity": "2 cucharadas"},
+      {"ingredient_id": "076", "quantity": "1 cucharadita"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "023",
+    "nombre": "Boquerones en vinagre",
+    "pasos": "1. Limpiar los boquerones y dejar en vinagre 1 hora.\n2. Escurrir y colocar en una fuente.\n3. Aliñar con ajo, perejil y aceite de oliva.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "059", "quantity": "500 g"},
+      {"ingredient_id": "029", "quantity": "200 ml"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "007", "quantity": "1 puñado"},
+      {"ingredient_id": "003", "quantity": "100 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "024",
+    "nombre": "Migas de pastor",
+    "pasos": "1. Poner el pan duro en remojo 5 minutos.\n2. Sofreír ajos en aceite de oliva.\n3. Añadir el pan y remover.\n4. Incorporar el chorizo y el tocino.\n5. Servir calientes.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "024", "quantity": "500 g"},
+      {"ingredient_id": "052", "quantity": "100 g"},
+      {"ingredient_id": "051", "quantity": "100 g"},
+      {"ingredient_id": "006", "quantity": "3 dientes"},
+      {"ingredient_id": "003", "quantity": "100 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "025",
+    "nombre": "Fideuá de marisco",
+    "pasos": "1. Sofreír el marisco en aceite de oliva.\n2. Añadir el tomate triturado y el pimentón.\n3. Incorporar los fideos y sofreír.\n4. Añadir caldo de pescado caliente.\n5. Cocinar 15 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "062", "quantity": "200 g"},
+      {"ingredient_id": "063", "quantity": "200 g"},
+      {"ingredient_id": "064", "quantity": "200 g"},
+      {"ingredient_id": "023", "quantity": "400 g"},
+      {"ingredient_id": "068", "quantity": "200 g"},
+      {"ingredient_id": "083", "quantity": "1 l"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"},
+      {"ingredient_id": "080", "quantity": "1 cucharada"}
+    ]
+  },
+  {
+    "id": "026",
+    "nombre": "Sardinas a la plancha",
+    "pasos": "1. Limpiar las sardinas y sazonar.\n2. Calentar la plancha con aceite de oliva.\n3. Asar las sardinas 3 minutos por cada lado.\n4. Servir con limón.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "058", "quantity": "500 g"},
+      {"ingredient_id": "003", "quantity": "30 ml"},
+      {"ingredient_id": "030", "quantity": "1 unidad"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "027",
+    "nombre": "Cazuela de berenjenas",
+    "pasos": "1. Cortar las berenjenas en rodajas.\n2. Freír las berenjenas y reservar.\n3. Sofreír cebolla y ajo.\n4. Añadir tomate y mezclar.\n5. Colocar capas de berenjena y salsa.\n6. Gratinar con queso.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "014", "quantity": "3 unidades"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "068", "quantity": "400 g"},
+      {"ingredient_id": "043", "quantity": "200 g"},
+      {"ingredient_id": "003", "quantity": "100 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "028",
+    "nombre": "Potaje de garbanzos con espinacas",
+    "pasos": "1. Poner los garbanzos en remojo 12 horas.\n2. Cocer los garbanzos con agua y sal.\n3. Sofreír cebolla, ajo y pimiento.\n4. Añadir las espinacas y el tomate.\n5. Incorporar los garbanzos y cocinar 15 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "021", "quantity": "400 g"},
+      {"ingredient_id": "154", "quantity": "200 g"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "010", "quantity": "1 unidad"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "001", "quantity": "2 unidades"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "029",
+    "nombre": "Sepia con cebolla",
+    "pasos": "1. Limpiar y cortar la sepia en tiras.\n2. Sofreír la cebolla en aceite de oliva.\n3. Añadir la sepia y cocinar 10 minutos.\n4. Agregar el vino blanco y el perejil.\n5. Cocinar 5 minutos más.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "061", "quantity": "500 g"},
+      {"ingredient_id": "002", "quantity": "2 unidades"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "085", "quantity": "100 ml"},
+      {"ingredient_id": "007", "quantity": "1 puñado"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "030",
+    "nombre": "Arroz negro",
+    "pasos": "1. Sofreír el calamar y el ajo.\n2. Añadir el arroz y la tinta de calamar.\n3. Incorporar el caldo de pescado caliente.\n4. Cocinar 18 minutos.\n5. Dejar reposar 5 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "060", "quantity": "300 g"},
+      {"ingredient_id": "022", "quantity": "400 g"},
+      {"ingredient_id": "083", "quantity": "1 l"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "031",
+    "nombre": "Cordero asado",
+    "pasos": "1. Sazonar la pierna de cordero.\n2. Salpicar con ajo, romero y tomillo.\n3. Asar en horno a 180°C durante 1,5 horas.\n4. Regar con vino tinto durante la cocción.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "167", "quantity": "1,5 kg"},
+      {"ingredient_id": "006", "quantity": "4 dientes"},
+      {"ingredient_id": "077", "quantity": "1 rama"},
+      {"ingredient_id": "078", "quantity": "1 rama"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "086", "quantity": "100 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "032",
+    "nombre": "Conejo al ajillo",
+    "pasos": "1. Trocear el conejo y sazonar.\n2. Dorar los ajos en aceite de oliva.\n3. Añadir el conejo y freír hasta dorar.\n4. Agregar el vino blanco y el laurel.\n5. Cocinar 30 minutos a fuego lento.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "169", "quantity": "1 unidad"},
+      {"ingredient_id": "006", "quantity": "4 dientes"},
+      {"ingredient_id": "003", "quantity": "100 ml"},
+      {"ingredient_id": "085", "quantity": "100 ml"},
+      {"ingredient_id": "079", "quantity": "1 hoja"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "033",
+    "nombre": "Porra antequerana",
+    "pasos": "1. Triturar el tomate, pan, ajo, aceite y sal.\n2. Emulsionar hasta obtener una crema espesa.\n3. Enfriar en nevera.\n4. Servir con huevo duro, atún y jamón picado.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "001", "quantity": "1 kg"},
+      {"ingredient_id": "024", "quantity": "200 g"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "003", "quantity": "100 ml"},
+      {"ingredient_id": "004", "quantity": "2 unidades"},
+      {"ingredient_id": "057", "quantity": "100 g"},
+      {"ingredient_id": "053", "quantity": "100 g"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "034",
+    "nombre": "Chuletas de cordero a la brasa",
+    "pasos": "1. Sazonar las chuletas.\n2. Asar a la brasa o plancha caliente.\n3. Servir con patatas fritas y pimiento asado.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "167", "quantity": "8 chuletas"},
+      {"ingredient_id": "003", "quantity": "30 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"},
+      {"ingredient_id": "009", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "035",
+    "nombre": "Menestra de verduras",
+    "pasos": "1. Cocer todas las verduras por separado.\n2. Rehogar los ajos y la cebolla.\n3. Añadir las verduras cocidas.\n4. Saltear todo junto y servir caliente.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "016", "quantity": "4 unidades"},
+      {"ingredient_id": "015", "quantity": "8 unidades"},
+      {"ingredient_id": "017", "quantity": "200 g"},
+      {"ingredient_id": "012", "quantity": "2 unidades"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "036",
+    "nombre": "Tortilla de bacalao",
+    "pasos": "1. Desmigar el bacalao y pochar en aceite.\n2. Batir los huevos y mezclar con el bacalao.\n3. Cuajar la tortilla en la sartén.\n4. Servir caliente o fría.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "056", "quantity": "300 g"},
+      {"ingredient_id": "004", "quantity": "6 unidades"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "003", "quantity": "100 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "037",
+    "nombre": "Alcachofas salteadas",
+    "pasos": "1. Limpiar las alcachofas y cortarlas en cuartos.\n2. Saltear los ajos en aceite de oliva.\n3. Añadir las alcachofas y saltear.\n4. Agregar el vino blanco y cocinar 10 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "016", "quantity": "8 unidades"},
+      {"ingredient_id": "006", "quantity": "3 dientes"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "085", "quantity": "100 ml"},
+      {"ingredient_id": "030", "quantity": "1 unidad"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "038",
+    "nombre": "Caldo de pescado",
+    "pasos": "1. Poner el pescado, verduras y agua en una olla.\n2. Cocer 30 minutos.\n3. Colar y servir caliente.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "055", "quantity": "500 g"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "012", "quantity": "1 unidad"},
+      {"ingredient_id": "145", "quantity": "1 unidad"},
+      {"ingredient_id": "007", "quantity": "1 puñado"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "039",
+    "nombre": "Ensalada de pulpo",
+    "pasos": "1. Cocer el pulpo.\n2. Cortar en rodajas.\n3. Mezclar con cebolla, pimiento y aceitunas.\n4. Aliñar con aceite y vinagre.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "108", "quantity": "500 g"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "010", "quantity": "1 unidad"},
+      {"ingredient_id": "041", "quantity": "100 g"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "029", "quantity": "2 cucharadas"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "040",
+    "nombre": "Pimientos asados",
+    "pasos": "1. Asar los pimientos en el horno.\n2. Pelar y despepitar.\n3. Aliñar con aceite, ajo y sal.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "010", "quantity": "4 unidades"},
+      {"ingredient_id": "011", "quantity": "4 unidades"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "041",
+    "nombre": "Tortilla de calabacín",
+    "pasos": "1. Rallar el calabacín y escurrir.\n2. Batir los huevos y mezclar con el calabacín.\n3. Cuajar en la sartén con aceite de oliva.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "013", "quantity": "2 unidades"},
+      {"ingredient_id": "004", "quantity": "4 unidades"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "042",
+    "nombre": "Rodaballo al horno",
+    "pasos": "1. Sazonar el rodaballo.\n2. Colocar en una bandeja con ajo y perejil.\n3. Hornear a 180°C durante 20 minutos.\n4. Servir con limón.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "117", "quantity": "1 unidad"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "007", "quantity": "1 puñado"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "030", "quantity": "1 unidad"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "043",
+    "nombre": "Lubina a la sal",
+    "pasos": "1. Rellenar la lubina con ajo y perejil.\n2. Cubrir completamente con sal gorda.\n3. Hornear a 200°C durante 25 minutos.\n4. Romper la sal y servir.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "118", "quantity": "1 unidad"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "007", "quantity": "1 puñado"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "044",
+    "nombre": "Dorada a la plancha",
+    "pasos": "1. Sazonar la dorada.\n2. Calentar la plancha con aceite.\n3. Asar 5 minutos por cada lado.\n4. Servir con verduras.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "119", "quantity": "2 unidades"},
+      {"ingredient_id": "003", "quantity": "30 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "045",
+    "nombre": "Caballa en escabeche",
+    "pasos": "1. Freír la caballa.\n2. Preparar un escabeche con cebolla, ajo, vinagre y aceite.\n3. Macerar el pescado en el escabeche 24 horas.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "120", "quantity": "4 unidades"},
+      {"ingredient_id": "002", "quantity": "2 unidades"},
+      {"ingredient_id": "006", "quantity": "3 dientes"},
+      {"ingredient_id": "029", "quantity": "200 ml"},
+      {"ingredient_id": "003", "quantity": "100 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"},
+      {"ingredient_id": "079", "quantity": "2 hojas"}
+    ]
+  },
+  {
+    "id": "046",
+    "nombre": "Arroz a la cubana",
+    "pasos": "1. Cocer el arroz.\n2. Freír los huevos y el plátano.\n3. Servir el arroz con el huevo, plátano y tomate frito.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "022", "quantity": "300 g"},
+      {"ingredient_id": "004", "quantity": "4 unidades"},
+      {"ingredient_id": "034", "quantity": "2 unidades"},
+      {"ingredient_id": "068", "quantity": "200 g"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "047",
+    "nombre": "Garbanzos con espinacas",
+    "pasos": "1. Cocer los garbanzos.\n2. Sofreír cebolla, ajo y pimiento.\n3. Añadir las espinacas.\n4. Incorporar los garbanzos y cocinar 5 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "021", "quantity": "400 g"},
+      {"ingredient_id": "154", "quantity": "300 g"},
+      {"ingredient_id": "002", "quantity": "1 unidad"},
+      {"ingredient_id": "006", "quantity": "2 dientes"},
+      {"ingredient_id": "010", "quantity": "1 unidad"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "075", "quantity": "1 cucharadita"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "048",
+    "nombre": "Tortilla de ajos tiernos",
+    "pasos": "1. Limpiar los ajos tiernos y cortarlos.\n2. Batir los huevos y mezclar.\n3. Cuajar en la sartén con aceite de oliva.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "006", "quantity": "4 dientes"},
+      {"ingredient_id": "004", "quantity": "4 unidades"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "049",
+    "nombre": "Sopa de ajo",
+    "pasos": "1. Freír los ajos en aceite.\n2. Añadir el pan y el pimentón.\n3. Agregar agua y cocinar 15 minutos.\n4. Servir con huevo pochado.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "006", "quantity": "6 dientes"},
+      {"ingredient_id": "024", "quantity": "200 g"},
+      {"ingredient_id": "080", "quantity": "2 cucharadas"},
+      {"ingredient_id": "003", "quantity": "50 ml"},
+      {"ingredient_id": "004", "quantity": "4 unidades"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "050",
+    "nombre": "Ensalada de naranja y bacalao",
+    "pasos": "1. Desmigar el bacalao.\n2. Pelar la naranja y cortarla en rodajas.\n3. Mezclar con cebolla y aceitunas.\n4. Aliñar con aceite de oliva.",
+    "imagen": "",
+    "ingredientes": [
+      {"ingredient_id": "056", "quantity": "300 g"},
+      {"ingredient_id": "031", "quantity": "2 unidades"},
+      {"ingredient_id": "002", "quantity": "1/2 unidad"},
+      {"ingredient_id": "041", "quantity": "50 g"},
+      {"ingredient_id": "003", "quantity": "30 ml"},
+      {"ingredient_id": "008", "quantity": "al gusto"}
+    ]
+  },
+  {
+    "id": "051",
+    "nombre": "Espaguetis a la Carbonara (Italia)",
+    "pasos": "1. Cocer la pasta en agua hirviendo con sal.\n2. Dorar la panceta en una sartén sin aceite.\n3. Batir los huevos con el queso parmesano y pimienta negra.\n4. Mezclar la pasta caliente con la panceta y retirar del fuego.\n5. Añadir la mezcla de huevo y remover rápidamente para crear una crema.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "023", "quantity": "400 g" },
+      { "ingredient_id": "209", "quantity": "150 g" },
+      { "ingredient_id": "004", "quantity": "4 unidades" },
+      { "ingredient_id": "206", "quantity": "80 g" },
+      { "ingredient_id": "009", "quantity": "al gusto" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "052",
+    "nombre": "Ratatouille (Francia)",
+    "pasos": "1. Cortar en rodajas finas el calabacín, la berenjena y los tomates.\n2. Sofreír cebolla y ajo picados en una sartén con aceite de oliva.\n3. Disponer las rodajas de verduras alternadas en una fuente de horno.\n4. Rociar con aceite, hierbas provenzales y hornear a 180°C durante 45 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "013", "quantity": "2 unidades" },
+      { "ingredient_id": "014", "quantity": "2 unidades" },
+      { "ingredient_id": "001", "quantity": "4 unidades" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "003", "quantity": "60 ml" },
+      { "ingredient_id": "078", "quantity": "1 cucharadita" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "053",
+    "nombre": "Lasaña a la Boloñesa (Italia)",
+    "pasos": "1. Cocinar la carne picada con cebolla, zanahoria y tomate triturado.\n2. Preparar una bechamel ligera con mantequilla, harina y leche.\n3. Montar capas de pasta de lasaña, carne y bechamel en una bandeja.\n4. Cubrir con queso parmesano y gratinar al horno a 200°C durante 25 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "023", "quantity": "12 láminas" },
+      { "ingredient_id": "210", "quantity": "500 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "012", "quantity": "1 unidad" },
+      { "ingredient_id": "068", "quantity": "400 g" },
+      { "ingredient_id": "045", "quantity": "500 ml" },
+      { "ingredient_id": "046", "quantity": "40 g" },
+      { "ingredient_id": "025", "quantity": "40 g" },
+      { "ingredient_id": "206", "quantity": "100 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "054",
+    "nombre": "Sopa de Cebolla Francesa (Francia)",
+    "pasos": "1. Cortar las cebollas en juliana fina y pocharlas con mantequilla hasta caramelizar.\n2. Añadir harina y remover, luego verter el caldo de carne y vino blanco.\n3. Cocinar a fuego lento durante 30 minutos.\n4. Servir en cuencos con una rebanada de pan y queso gruyer encima, gratinando al horno.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "002", "quantity": "4 unidades" },
+      { "ingredient_id": "046", "quantity": "50 g" },
+      { "ingredient_id": "025", "quantity": "1 cucharada" },
+      { "ingredient_id": "109", "quantity": "1 l" },
+      { "ingredient_id": "085", "quantity": "100 ml" },
+      { "ingredient_id": "024", "quantity": "4 rebanadas" },
+      { "ingredient_id": "219", "quantity": "150 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "055",
+    "nombre": "Risotto de Setas (Italia)",
+    "pasos": "1. Sofreír cebolla picada y champiñones laminados en aceite de oliva.\n2. Añadir el arroz arborio y nacarar un minuto.\n3. Verter vino blanco y dejar evaporar.\n4. Incorporar caldo de verduras caliente poco a poco mientras se remueve hasta que el arroz esté cremoso.\n5. Mantecar con mantequilla y queso parmesano.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "022", "quantity": "350 g" },
+      { "ingredient_id": "208", "quantity": "250 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "085", "quantity": "100 ml" },
+      { "ingredient_id": "216", "quantity": "1 l" },
+      { "ingredient_id": "046", "quantity": "30 g" },
+      { "ingredient_id": "206", "quantity": "60 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "056",
+    "nombre": "Quiche Lorraine (Francia)",
+    "pasos": "1. Extender una masa de hojaldre en un molde redondo.\n2. Dorar el bacon en dados en una sartén.\n3. Batir los huevos con la nata, sal, pimienta y nuez moscada.\n4. Colocar el bacon sobre la masa, verter la mezcla de huevo y nata, y cubrir con queso rallado.\n5. Hornear a 180°C durante 30 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "220", "quantity": "1 unidad" },
+      { "ingredient_id": "229", "quantity": "200 g" },
+      { "ingredient_id": "004", "quantity": "3 unidades" },
+      { "ingredient_id": "199", "quantity": "200 ml" },
+      { "ingredient_id": "219", "quantity": "100 g" },
+      { "ingredient_id": "009", "quantity": "al gusto" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "057",
+    "nombre": "Bruschetta de Tomate y Albahaca (Italia)",
+    "pasos": "1. Tostar rebanadas de pan en el horno o tostadora.\n2. Frotar un diente de ajo sobre el pan tostado.\n3. Picar los tomates en dados pequeños y mezclarlos con albahaca fresca picada, aceite de oliva y sal.\n4. Colocar la mezcla de tomate sobre el pan y servir inmediatamente.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "024", "quantity": "4 rebanadas" },
+      { "ingredient_id": "006", "quantity": "1 diente" },
+      { "ingredient_id": "001", "quantity": "3 unidades" },
+      { "ingredient_id": "207", "quantity": "10 hojas" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "058",
+    "nombre": "Pollo al Vino Tinto - Coq au Vin (Francia)",
+    "pasos": "1. Dorar trozos de pollo en una cazuela con mantequilla y tocino.\n2. Añadir cebollitas, champiñones y ajo.\n3. Verter el vino tinto y el caldo de pollo, añadiendo una hoja de laurel.\n4. Cocinar a fuego lento durante 1 hora hasta que el pollo esté tierno.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "223", "quantity": "4 unidades" },
+      { "ingredient_id": "046", "quantity": "40 g" },
+      { "ingredient_id": "051", "quantity": "100 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "208", "quantity": "200 g" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "086", "quantity": "400 ml" },
+      { "ingredient_id": "084", "quantity": "200 ml" },
+      { "ingredient_id": "079", "quantity": "1 hoja" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "059",
+    "nombre": "Carpaccio de Ternera (Italia)",
+    "pasos": "1. Congelar ligeramente el solomillo para cortarlo en láminas muy finas.\n2. Extender las lonchas en un plato llano.\n3. Preparar una emulsión con aceite de oliva, zumo de limón, sal y pimienta.\n4. Rociar la carne y decorar con alcaparras y virutas de queso parmesano.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "050", "quantity": "300 g" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "030", "quantity": "1 unidad" },
+      { "ingredient_id": "100", "quantity": "1 cucharada" },
+      { "ingredient_id": "206", "quantity": "50 g" },
+      { "ingredient_id": "009", "quantity": "al gusto" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "060",
+    "nombre": "Bouillabaisse (Francia)",
+    "pasos": "1. Sofreír puerro, cebolla, ajo y tomates en aceite de oliva.\n2. Añadir variedad de pescados y mariscos troceados.\n3. Cubrir con agua, azafrán, hinojo y vino blanco, cocinando a fuego vivo 20 minutos.\n4. Servir el caldo con sopas de pan y el pescado aparte.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "055", "quantity": "400 g" },
+      { "ingredient_id": "116", "quantity": "300 g" },
+      { "ingredient_id": "063", "quantity": "300 g" },
+      { "ingredient_id": "218", "quantity": "1 unidad" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "3 dientes" },
+      { "ingredient_id": "001", "quantity": "2 unidades" },
+      { "ingredient_id": "082", "quantity": "1 pizca" },
+      { "ingredient_id": "085", "quantity": "150 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "061",
+    "nombre": "Ñoquis a la Sorrentina (Italia)",
+    "pasos": "1. Cocer los ñoquis en agua hirviendo con sal hasta que floten.\n2. Preparar una salsa de tomate natural con ajo y hojas de albahaca fresca.\n3. Mezclar los ñoquis con la salsa de tomate en una cazuela.\n4. Añadir dados de mozzarella y gratinar hasta que el queso se funda.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "023", "quantity": "500 g" },
+      { "ingredient_id": "068", "quantity": "500 g" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "207", "quantity": "15 hojas" },
+      { "ingredient_id": "213", "quantity": "200 g" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "062",
+    "nombre": "Salade Niçoise (Francia)",
+    "pasos": "1. Cocer huevos y judías verdes al dente.\n2. Disponer en una fuente lechuga, tomates troceados, atún desmigado, anchoas, aceitunas negras y los huevos en cuartos.\n3. Aliñar con una vinagreta clásica de aceite de oliva y vinagre.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "150", "quantity": "1 unidad" },
+      { "ingredient_id": "001", "quantity": "3 unidades" },
+      { "ingredient_id": "057", "quantity": "2 latas" },
+      { "ingredient_id": "004", "quantity": "2 unidades" },
+      { "ingredient_id": "017", "quantity": "150 g" },
+      { "ingredient_id": "221", "quantity": "50 g" },
+      { "ingredient_id": "101", "quantity": "4 filetes" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "029", "quantity": "2 cucharadas" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "063",
+    "nombre": "Insalata Caprese (Italia)",
+    "pasos": "1. Cortar tomates maduros y mozzarella fresca en rodajas del mismo grosor.\n2. Intercalar las rodajas de tomate y mozzarella en un plato plano.\n3. Colocar hojas de albahaca fresca entre ellas.\n4. Aderezar con un buen chorro de aceite de oliva virgen extra, sal y pimienta.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "001", "quantity": "3 unidades" },
+      { "ingredient_id": "213", "quantity": "250 g" },
+      { "ingredient_id": "207", "quantity": "12 hojas" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "009", "quantity": "al gusto" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "064",
+    "nombre": "Berenjenas a la Parmesana - Parmigiana (Italia)",
+    "pasos": "1. Cortar las berenjenas en rodajas y freírlas o asarlas.\n2. En una fuente, alternar capas de berenjena, salsa de tomate, mozzarella y queso parmesano.\n3. Hornear a 190°C durante 25 minutos hasta que burbujee y se dore la superficie.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "014", "quantity": "3 unidades" },
+      { "ingredient_id": "068", "quantity": "400 g" },
+      { "ingredient_id": "213", "quantity": "200 g" },
+      { "ingredient_id": "206", "quantity": "80 g" },
+      { "ingredient_id": "003", "quantity": "60 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "065",
+    "nombre": "Steak Tartar (Francia)",
+    "pasos": "1. Picar muy fino el solomillo de ternera con un cuchillo.\n2. Mezclar en un bol con cebolla muy picada, alcaparras, mostaza, yema de huevo, unas gotas de tabasco y salsa Worcestershire.\n3. Servir frío acompañado de pan tostado.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "050", "quantity": "400 g" },
+      { "ingredient_id": "002", "quantity": "1/2 unidad" },
+      { "ingredient_id": "100", "quantity": "1 cucharada" },
+      { "ingredient_id": "089", "quantity": "1 cucharadita" },
+      { "ingredient_id": "004", "quantity": "1 unidad" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "066",
+    "nombre": "Ossobuco a la Milanesa (Italia)",
+    "pasos": "1. Dorar los trozos de jarrete de ternera enharinados en una cazuela con aceite y mantequilla.\n2. Añadir cebolla, zanahoria y apio picados, y regar con vino blanco.\n3. Incorporar caldo de carne y cocinar a fuego lento tapado durante 2 horas.\n4. Servir acompañado de un picadillo de piel de limón, ajo y perejil.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "224", "quantity": "4 rodajas" },
+      { "ingredient_id": "025", "quantity": "50 g" },
+      { "ingredient_id": "046", "quantity": "30 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "012", "quantity": "1 unidad" },
+      { "ingredient_id": "094", "quantity": "1 rama" },
+      { "ingredient_id": "085", "quantity": "150 ml" },
+      { "ingredient_id": "109", "quantity": "400 ml" },
+      { "ingredient_id": "030", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "1 diente" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "067",
+    "nombre": "Galette de Trigo Sarraceno con Jamón y Huevo (Francia)",
+    "pasos": "1. Preparar una masa fluida con harina de trigo sarraceno, agua y sal.\n2. Verter un cucharón en una sartén caliente con mantequilla para hacer una crepe fina.\n3. Colocar en el centro lonchas de jamón, queso y romper un huevo encima.\n4. Doblar los bordes hacia dentro y cocinar hasta que cuaje el huevo.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "097", "quantity": "200 g" },
+      { "ingredient_id": "046", "quantity": "30 g" },
+      { "ingredient_id": "053", "quantity": "100 g" },
+      { "ingredient_id": "219", "quantity": "80 g" },
+      { "ingredient_id": "004", "quantity": "1 unidad" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "068",
+    "nombre": "Pizzetta Margherita (Italia)",
+    "pasos": "1. Estirar una bola de masa de pan o harina de trigo.\n2. Extender tomate triturado por encima y colocar mozzarella troceada.\n3. Hornear a máxima temperatura (250°C) durante 8-10 minutos.\n4. Al salir del horno, decorar con hojas de albahaca fresca y aceite de oliva.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "025", "quantity": "300 g" },
+      { "ingredient_id": "068", "quantity": "150 g" },
+      { "ingredient_id": "213", "quantity": "150 g" },
+      { "ingredient_id": "207", "quantity": "6 hojas" },
+      { "ingredient_id": "003", "quantity": "20 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "069",
+    "nombre": "Mejillones a la Marinera al Estilo Francés (Francia)",
+    "pasos": "1. Limpiar los mejillones.\n2. Sofreír chalotas picadas y ajo en una cazuela grande con mantequilla.\n3. Añadir vino blanco y los mejillones, tapar y cocinar hasta que se abran.\n4. Incorporar un chorrito de nata y perejil picado antes de servir.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "063", "quantity": "1 kg" },
+      { "ingredient_id": "144", "quantity": "2 unidades" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "046", "quantity": "40 g" },
+      { "ingredient_id": "085", "quantity": "200 ml" },
+      { "ingredient_id": "199", "quantity": "50 ml" },
+      { "ingredient_id": "007", "quantity": "1 puñado" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "070",
+    "nombre": "Arancini Sicilianos (Italia)",
+    "pasos": "1. Cocinar un arroz redondo espeso con caldo y azafrán, dejar enfriar.\n2. Formar bolas de arroz rellenándolas con dados de mozzarella y guisantes.\n3. Pasar las bolas por harina, huevo batido y pan rallado.\n4. Freír en abundante aceite caliente hasta que estén doradas y crujientes.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "022", "quantity": "400 g" },
+      { "ingredient_id": "082", "quantity": "1 pizca" },
+      { "ingredient_id": "213", "quantity": "100 g" },
+      { "ingredient_id": "018", "quantity": "50 g" },
+      { "ingredient_id": "025", "quantity": "50 g" },
+      { "ingredient_id": "004", "quantity": "2 unidades" },
+      { "ingredient_id": "098", "quantity": "100 g" },
+      { "ingredient_id": "003", "quantity": "500 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "071",
+    "nombre": "Tortilla de patatas tradicional española extra",
+    "pasos": "1. Cortar patatas y cebolla finamente.\n2. Pochar en abundante aceite de oliva a fuego lento.\n3. Escurrir bien y mezclar con huevos batidos.\n4. Cuajar al gusto en sartén.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "004", "quantity": "5 unidades" },
+      { "ingredient_id": "005", "quantity": "3 unidades" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "003", "quantity": "150 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "072",
+    "nombre": "Pollo al ajillo tradicional",
+    "pasos": "1. Trocear el pollo y dorarlo con ajos enteros en aceite de oliva.\n2. Añadir vino blanco y caldo de pollo.\n3. Reducir a fuego lento durante 25 minutos y servir caliente.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "048", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "6 dientes" },
+      { "ingredient_id": "003", "quantity": "80 ml" },
+      { "ingredient_id": "085", "quantity": "100 ml" },
+      { "ingredient_id": "084", "quantity": "100 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "073",
+    "nombre": "Lomo de cerdo con patatas a lo pobre",
+    "pasos": "1. Cortar patatas y cebolla en rodajas finas y freír a fuego suave.\n2. Hacer los lomos de cerdo a la plancha.\n3. Servir la carne sobre la cama de patatas y cebolla.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "049", "quantity": "4 filetes" },
+      { "ingredient_id": "005", "quantity": "3 unidades" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "003", "quantity": "100 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "074",
+    "nombre": "Sopa de tomate casera",
+    "pasos": "1. Sofreír ajo y cebolla, añadir tomate triturado.\n2. Verter caldo de verduras y dejar cocer 20 minutos.\n3. Servir con pan tostado.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "068", "quantity": "500 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "216", "quantity": "600 ml" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "024", "quantity": "2 rebanadas" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "075",
+    "nombre": "Judías verdes salteadas con jamón",
+    "pasos": "1. Cocer las judías verdes al dente.\n2. Saltear tiras de jamón serrano con un poco de ajo en aceite.\n3. Añadir las judías y remover bien antes de servir.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "017", "quantity": "400 g" },
+      { "ingredient_id": "053", "quantity": "100 g" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "076",
+    "nombre": "Pasta al Pesto Genovés (Italia)",
+    "pasos": "1. Cocer la pasta en agua con sal.\n2. Triturar hojas de albahaca fresca con piñones, queso parmesano, ajo y aceite de oliva hasta formar una pasta homogénea.\n3. Mezclar el pesto con la pasta caliente.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "023", "quantity": "400 g" },
+      { "ingredient_id": "207", "quantity": "50 g" },
+      { "ingredient_id": "212", "quantity": "50 g" },
+      { "ingredient_id": "206", "quantity": "60 g" },
+      { "ingredient_id": "006", "quantity": "1 diente" },
+      { "ingredient_id": "003", "quantity": "100 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "077",
+    "nombre": "Entrecot a la Provenzal (Francia)",
+    "pasos": "1. Cocinar el entrecot de ternera a la plancha al punto deseado.\n2. Cubrir con una mezcla de mantequilla ablandada, ajo picado, perejil y pan rallado.\n3. Gratinar brevemente en el horno antes de servir.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "166", "quantity": "2 unidades" },
+      { "ingredient_id": "046", "quantity": "40 g" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "007", "quantity": "1 puñado" },
+      { "ingredient_id": "098", "quantity": "20 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "078",
+    "nombre": "Ensalada campera de patata",
+    "pasos": "1. Cocer patatas enteras con piel, pelar y trocear.\n2. Añadir tomate, pimiento verde, cebolla y atún desmigado.\n3. Aliñar con aceite de oliva, vinagre y sal.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "005", "quantity": "4 unidades" },
+      { "ingredient_id": "001", "quantity": "2 unidades" },
+      { "ingredient_id": "010", "quantity": "1 unidad" },
+      { "ingredient_id": "002", "quantity": "1/2 unidad" },
+      { "ingredient_id": "057", "quantity": "2 latas" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "029", "quantity": "2 cucharadas" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "079",
+    "nombre": "Fideos con sepia y gambas",
+    "pasos": "1. Sofreír la sepia troceada y las gambas en una sartén amplia.\n2. Añadir tomate triturado y fideos, rehogando el conjunto.\n3. Verter caldo de pescado y cocinar hasta que los fideos estén secos y tiernos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "023", "quantity": "350 g" },
+      { "ingredient_id": "061", "quantity": "300 g" },
+      { "ingredient_id": "062", "quantity": "200 g" },
+      { "ingredient_id": "068", "quantity": "150 g" },
+      { "ingredient_id": "083", "quantity": "700 ml" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "080",
+    "nombre": "Pizza Cuatro Quesos (Italia)",
+    "pasos": "1. Extender la base de masa para pizza.\n2. Cubrir con una capa fina de tomate o nata y repartir mozzarella, queso parmesano, queso azul y ricotta.\n3. Hornear a 240°C durante 10 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "025", "quantity": "300 g" },
+      { "ingredient_id": "213", "quantity": "100 g" },
+      { "ingredient_id": "206", "quantity": "50 g" },
+      { "ingredient_id": "188", "quantity": "50 g" },
+      { "ingredient_id": "211", "quantity": "50 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "081",
+    "nombre": "Conejo estofado a la francesa (Francia)",
+    "pasos": "1. Dorar trozos de conejo en aceite de oliva.\n2. Añadir cebolla, zanahoria y champiñones.\n3. Verter vino blanco y caldo de verduras, cocinando a fuego lento durante 40 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "169", "quantity": "1 unidad" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "012", "quantity": "2 unidades" },
+      { "ingredient_id": "208", "quantity": "150 g" },
+      { "ingredient_id": "085", "quantity": "150 ml" },
+      { "ingredient_id": "216", "quantity": "300 ml" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "082",
+    "nombre": "Tortilla de espinacas fresca",
+    "pasos": "1. Rehogar las espinacas frescas con un diente de ajo picado.\n2. Batir los huevos con sal y mezclar con las espinacas escurridas.\n3. Cuajar en la sartén por ambos lados.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "154", "quantity": "250 g" },
+      { "ingredient_id": "004", "quantity": "4 unidades" },
+      { "ingredient_id": "006", "quantity": "1 diente" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "083",
+    "nombre": "Risotto de Verduras (Italia)",
+    "pasos": "1. Sofreír cebolla, calabacín y zanahoria en cubitos pequeños.\n2. Agregar arroz arborio, nacarar y añadir vino blanco.\n3. Incorporar caldo de verduras caliente progresivamente hasta que el arroz esté listo.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "022", "quantity": "350 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "013", "quantity": "1 unidad" },
+      { "ingredient_id": "012", "quantity": "1 unidad" },
+      { "ingredient_id": "085", "quantity": "100 ml" },
+      { "ingredient_id": "216", "quantity": "1 l" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "206", "quantity": "50 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "084",
+    "nombre": "Filete de merluza en salsa verde",
+    "pasos": "1. Dorar ajo laminado en una cazuela con aceite de oliva y un poco de harina.\n2. Añadir caldo de pescado y vino blanco, ligando la salsa.\n3. Incorporar los lomos de merluza y perejil picado, cocinando 8 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "055", "quantity": "4 lomos" },
+      { "ingredient_id": "006", "quantity": "3 dientes" },
+      { "ingredient_id": "025", "quantity": "1 cucharada" },
+      { "ingredient_id": "083", "quantity": "250 ml" },
+      { "ingredient_id": "085", "quantity": "50 ml" },
+      { "ingredient_id": "007", "quantity": "1 puñado" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "085",
+    "nombre": "Gratin Dauphinois (Francia)",
+    "pasos": "1. Cortar patatas en rodajas finas sin lavar para conservar el almidón.\n2. Colocarlas en una fuente de horno untada de ajo.\n3. Cubrir con una mezcla de nata, leche, sal, pimienta y nuez moscada.\n4. Hornear a 160°C durante 1 hora hasta que la superficie esté dorada.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "005", "quantity": "1 kg" },
+      { "ingredient_id": "199", "quantity": "300 ml" },
+      { "ingredient_id": "045", "quantity": "200 ml" },
+      { "ingredient_id": "006", "quantity": "1 diente" },
+      { "ingredient_id": "046", "quantity": "30 g" },
+      { "ingredient_id": "009", "quantity": "al gusto" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "086",
+    "nombre": "Ensalada de pasta mediterránea",
+    "pasos": "1. Cocer la pasta y enfriar con agua.\n2. Mezclar con tomate en dados, aceitunas negras, queso fresco en cubos y hojas de albahaca.\n3. Aliñar con aceite de oliva y vinagre.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "023", "quantity": "350 g" },
+      { "ingredient_id": "001", "quantity": "2 unidades" },
+      { "ingredient_id": "221", "quantity": "50 g" },
+      { "ingredient_id": "043", "quantity": "150 g" },
+      { "ingredient_id": "207", "quantity": "8 hojas" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "029", "quantity": "2 cucharadas" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "087",
+    "nombre": "Pollo al horno con patatas y limón",
+    "pasos": "1. Disponer el pollo troceado en una bandeja con patatas en rodajas y cebolla.\n2. Rociar con zumo de limón, aceite de oliva, vino blanco y tomillo.\n3. Hornear a 190°C durante 50 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "048", "quantity": "1 unidad" },
+      { "ingredient_id": "005", "quantity": "4 unidades" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "030", "quantity": "1 unidad" },
+      { "ingredient_id": "003", "quantity": "50 ml" },
+      { "ingredient_id": "085", "quantity": "100 ml" },
+      { "ingredient_id": "078", "quantity": "1 cucharadita" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "088",
+    "nombre": "Crepes Sucrees al Limón (Francia)",
+    "pasos": "1. Mezclar harina, leche, huevos, azúcar y un poco de mantequilla fundida hasta obtener una masa ligera.\n2. Cocinar finas porciones en una sartén caliente untada con mantequilla.\n3. Servir rociadas con zumo de limón y azúcar.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "025", "quantity": "250 g" },
+      { "ingredient_id": "045", "quantity": "500 ml" },
+      { "ingredient_id": "004", "quantity": "3 unidades" },
+      { "ingredient_id": "027", "quantity": "50 g" },
+      { "ingredient_id": "046", "quantity": "40 g" },
+      { "ingredient_id": "030", "quantity": "2 unidades" }
+    ]
+  },
+  {
+    "id": "089",
+    "nombre": "Tortilla de alcachofas",
+    "pasos": "1. Limpiar y saltear corazones de alcachofa troceados en aceite.\n2. Batir los huevos y mezclar con las alcachofas cocinadas.\n3. Cuajar en la sartén.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "016", "quantity": "6 unidades" },
+      { "ingredient_id": "004", "quantity": "4 unidades" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "090",
+    "nombre": "Penne all'Arrabbiata (Italia)",
+    "pasos": "1. Cocer la pasta penne en agua con sal.\n2. Sofreír ajo y guindilla en aceite de oliva, añadir tomate triturado y cocinar 15 minutos.\n3. Mezclar la salsa picante con la pasta y decorar con perejil.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "023", "quantity": "400 g" },
+      { "ingredient_id": "006", "quantity": "2 dientes" },
+      { "ingredient_id": "068", "quantity": "400 g" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "091",
+    "nombre": "Salmón al horno con hierbas provenzales",
+    "pasos": "1. Colocar los lomos de salmón en una bandeja de horno.\n2. Rociar con aceite de oliva, zumo de limón, sal, pimienta y romero.\n3. Hornear a 180°C durante 12-15 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "054", "quantity": "4 lomos" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "030", "quantity": "1 unidad" },
+      { "ingredient_id": "077", "quantity": "1 rama" },
+      { "ingredient_id": "009", "quantity": "al gusto" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "092",
+    "nombre": "Hachis Parmentier (Francia)",
+    "pasos": "1. Preparar un puré de patatas casero con leche y mantequilla.\n2. Sofreír carne picada de ternera con cebolla y tomate.\n3. Colocar la carne en una fuente de horno, cubrir con el puré de patatas y gratinar con queso.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "005", "quantity": "8 unidades" },
+      { "ingredient_id": "045", "quantity": "150 ml" },
+      { "ingredient_id": "046", "quantity": "40 g" },
+      { "ingredient_id": "210", "quantity": "400 g" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "068", "quantity": "200 g" },
+      { "ingredient_id": "219", "quantity": "80 g" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "093",
+    "nombre": "Carpaccio de Pulpo (Italia)",
+    "pasos": "1. Prensar pulpo cocido en un molde cilíndrico y congelar.\n2. Cortar en láminas finísimas con un cuchillo bien afilado.\n3. Servir sobre plato frío con aceite de oliva, zumo de limón y perejil picado.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "108", "quantity": "400 g" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "030", "quantity": "1 unidad" },
+      { "ingredient_id": "007", "quantity": "1 puñado" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "094",
+    "nombre": "Ajo Blanco Malagueño",
+    "pasos": "1. Triturar almendras crudas con miga de pan remojada, ajo, aceite de oliva, agua fría y vinagre.\n2. Colar si es necesario y enfriar en la nevera.\n3. Servir acompañado de uvas frescas.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "069", "quantity": "150 g" },
+      { "ingredient_id": "024", "quantity": "100 g" },
+      { "ingredient_id": "006", "quantity": "1 diente" },
+      { "ingredient_id": "003", "quantity": "100 ml" },
+      { "ingredient_id": "029", "quantity": "2 cucharadas" },
+      { "ingredient_id": "039", "quantity": "1 racimo" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "095",
+    "nombre": "Clafoutis de Cerezas o Manzana (Francia)",
+    "pasos": "1. Disponer trozos de manzana en un molde engrasado con mantequilla.\n2. Batir huevos, harina, azúcar, leche y un toque de vainilla.\n3. Verter la mezcla sobre la fruta y hornear a 180°C durante 35 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "032", "quantity": "3 unidades" },
+      { "ingredient_id": "004", "quantity": "3 unidades" },
+      { "ingredient_id": "025", "quantity": "100 g" },
+      { "ingredient_id": "027", "quantity": "80 g" },
+      { "ingredient_id": "045", "quantity": "250 ml" },
+      { "ingredient_id": "046", "quantity": "20 g" }
+    ]
+  },
+  {
+    "id": "096",
+    "nombre": "Tortilla campesina de verduras",
+    "pasos": "1. Saltear dados de pimiento, calabacín y cebolla.\n2. Batir los huevos y mezclar con las verduras salteadas.\n3. Cuajar en la sartén a fuego medio.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "004", "quantity": "4 unidades" },
+      { "ingredient_id": "010", "quantity": "1/2 unidad" },
+      { "ingredient_id": "013", "quantity": "1/2 unidad" },
+      { "ingredient_id": "002", "quantity": "1/2 unidad" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "097",
+    "nombre": "Minestrone Tradicional (Italia)",
+    "pasos": "1. Sofreír cebolla, zanahoria, apio y calabacín en cubos.\n2. Añadir caldo de verduras, tomate triturado y alubias blancas cocidas.\n3. Incorporar un puñado de pasta corta y cocinar hasta que esté lista.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "012", "quantity": "1 unidad" },
+      { "ingredient_id": "094", "quantity": "1 rama" },
+      { "ingredient_id": "013", "quantity": "1 unidad" },
+      { "ingredient_id": "216", "quantity": "1 l" },
+      { "ingredient_id": "068", "quantity": "200 g" },
+      { "ingredient_id": "130", "quantity": "150 g" },
+      { "ingredient_id": "023", "quantity": "80 g" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "098",
+    "nombre": "Lomo al vino de Jerez",
+    "pasos": "1. Dorar los lomos de cerdo en una sartén con aceite de oliva.\n2. Retirar la carne y sofreír cebolla picada en el mismo aceite.\n3. Añadir vino de Jerez y caldo de carne, dejar reducir y reincorporar el lomo 5 minutos.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "049", "quantity": "4 filetes" },
+      { "ingredient_id": "002", "quantity": "1 unidad" },
+      { "ingredient_id": "156", "quantity": "100 ml" },
+      { "ingredient_id": "109", "quantity": "150 ml" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "099",
+    "nombre": "Ensalada de Tomate y Mozzarella con Pesto",
+    "pasos": "1. Cortar tomates en rodajas y queso mozzarella fresco.\n2. Disponer en una bandeja intercalados.\n3. Aderezar con una cucharada de salsa pesto por encima.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "001", "quantity": "3 unidades" },
+      { "ingredient_id": "213", "quantity": "200 g" },
+      { "ingredient_id": "207", "quantity": "30 g" },
+      { "ingredient_id": "212", "quantity": "20 g" },
+      { "ingredient_id": "206", "quantity": "30 g" },
+      { "ingredient_id": "003", "quantity": "40 ml" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  },
+  {
+    "id": "100",
+    "nombre": "Tosta provenzal de atún y tomate",
+    "pasos": "1. Tostar rebanadas de pan rústico.\n2. Untar con tomate triturado crudo y un chorro de aceite de oliva.\n3. Colocar encima atún escurrido y hierbas provenzales.",
+    "imagen": "",
+    "ingredientes": [
+      { "ingredient_id": "024", "quantity": "4 rebanadas" },
+      { "ingredient_id": "068", "quantity": "100 g" },
+      { "ingredient_id": "057", "quantity": "2 latas" },
+      { "ingredient_id": "003", "quantity": "30 ml" },
+      { "ingredient_id": "078", "quantity": "1 pizca" },
+      { "ingredient_id": "008", "quantity": "al gusto" }
+    ]
+  }
+]

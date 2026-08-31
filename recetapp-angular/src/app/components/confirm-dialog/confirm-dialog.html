@@ -1,0 +1,23 @@
+@if (dialog) {
+<div class="cd-overlay" (click)="cancel()">
+    <div class="cd-modal" (click)="$event.stopPropagation()">
+        <h5 class="cd-title">{{ dialog.title }}</h5>
+        <p class="cd-message">{{ dialog.message }}</p>
+
+        @if (dialog.inputType === 'select' && dialog.selectOptions) {
+        <label for="cdSelect" class="cd-message d-block mb-2">{{ dialog.message }}</label>
+        <select class="form-select form-select-sm mb-3" id="cdSelect" name="cdSelect" [(ngModel)]="selectValue"
+            aria-label="Selecciona una opción">
+            @for (opt of dialog.selectOptions; track $index) {
+            <option [value]="opt">{{ opt }}</option>
+            }
+        </select>
+        }
+
+        <div class="cd-buttons">
+            <button class="btn btn-outline-secondary btn-sm" (click)="cancel()">{{ dialog.cancelText }}</button>
+            <button class="btn btn-primary btn-sm" (click)="confirm()">{{ dialog.confirmText }}</button>
+        </div>
+    </div>
+</div>
+}
