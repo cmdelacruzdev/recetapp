@@ -22,8 +22,7 @@ Compuesta por dos partes independientes del mismo repositorio:
 7. [Endpoints de la API](#endpoints-de-la-api)
 8. [Datos predefinidos](#datos-predefinidos)
 9. [Despliegue en producción](#despliegue-en-producción)
-10. [Configuración del servidor web](#configuración-del-servidor-web)
-11. [Autor](#autor)
+10. [Autoría](#autoría)
 
 ---
 
@@ -71,7 +70,7 @@ recetapp/
 │   │   └── Traits/            # IsSuperAdmin
 │   ├── routes/
 │   │   ├── api.php            # Rutas de la API (públicas + Sanctum + superadmin)
-│   │   └── web.php            # Rutas de utilidad (/, storage-link, seed, limpiar-todo)
+│   │   └── web.php            # Ruta de utilidad (info de la API)
 │   ├── config/
 │   │   └── recetapp.php       # Configuración custom (límites, URL frontend, superadmin)
 │   ├── database/
@@ -88,8 +87,6 @@ recetapp/
 │       │   ├── guards/        # authGuard, desktopGuard
 │       │   └── core/          # pwa-install.service, update.service, version.config
 │       └── environments/      # environment.ts (dev) / environment.prod.ts (prod)
-│
-└── docs/ai-instructions/      # Documentación interna de desarrollo
 ```
 
 ---
@@ -268,7 +265,6 @@ Formato de respuesta JSON estandarizado (`{ success: true, ... }` o `{ error: '.
 | POST | `/api/activate-account` | Activar cuenta mediante formulario. |
 | POST | `/api/forgot-password` | Solicitar restablecimiento de contraseña. |
 | POST | `/api/reset-password` | Restablecer contraseña con token. |
-| GET | `/api/tips` | Obtener consejos rotativos. |
 
 ### Protegidos (requieren token)
 
@@ -286,6 +282,7 @@ Formato de respuesta JSON estandarizado (`{ success: true, ... }` o `{ error: '.
 | GET | `/api/get_all` | Obtener todos los datos del usuario (recetas, ingredientes, planning, compra). |
 | POST | `/api/update_profile` | Actualizar perfil. |
 | GET | `/api/admin_stats` | Estadísticas de administrador. |
+| GET | `/api/tips` | Obtener consejos rotativos. |
 
 **Usuarios**
 
@@ -341,14 +338,9 @@ Formato de respuesta JSON estandarizado (`{ success: true, ... }` o `{ error: '.
 
 ## Rutas de utilidad (`routes/web.php`)
 
-Accesibles desde el navegador para tareas de mantenimiento:
-
 | Ruta | Descripción |
 | ---- | ----------- |
-| `GET /` | Info de la API. |
-| `GET /storage-link` | Crear symlink de storage. |
-| `GET /seed` | Ejecutar seeder de datos predefinidos. |
-| `GET /limpiar-todo` | Limpiar toda la caché de Laravel. |
+| `GET /` | Info de la API (nombre, entorno, descripción, autor, app, debug). |
 
 ---
 
@@ -358,7 +350,6 @@ La app incluye ingredientes y recetas base en `storage/app/private/data/` (JSON)
 
 ```bash
 php artisan db:seed
-# o desde el navegador: http://localhost:8000/seed
 ```
 
 Los datos se copian a la casa del usuario cuando este ejecuta "Cargar Recetas Base" desde el panel de administrador (superadmin → `/api/admin/load-predefined`).
@@ -429,40 +420,6 @@ npm run build
 
 ---
 
-## Configuración del servidor web
+## Autoría
 
-El frontend debe servirse desde el dominio configurado en `FRONTEND_URL` (frontend) y la API desde su propio dominio (para separar CORS). Ejemplo con Apache y HTTPS:
-
-```apache
-# Frontend (SPA + PWA)
-<VirtualHost *:443>
-    ServerName recetapp.<tu-dominio>.es
-    DocumentRoot /ruta/a/dist/recetapp-angular/browser
-
-    <Directory /ruta/a/dist/recetapp-angular/browser>
-        AllowOverride All
-        Require all granted
-        # Fallback para las rutas del SPA (evita 404 al recargar)
-        FallbackResource /index.html
-    </Directory>
-</VirtualHost>
-
-# API
-<VirtualHost *:443>
-    ServerName api-recetapp.<tu-dominio>.es
-    DocumentRoot /ruta/a/api-recetapp/public
-
-    <Directory /ruta/a/api-recetapp/public>
-        AllowOverride All
-        Require all granted
-    </Directory>
-</VirtualHost>
-```
-
-> Asegúrate de que ambos dominios estén bajo HTTPS y de que `FRONTEND_URL` coincida con el dominio del frontend (esto es lo que valida `config/cors.php` y el envío de emails).
-
----
-
-## Autor
-
-Carlos Manuel de la Cruz Romero
+- **Desarrollo**: Carlos de la Cruz Romero — [LinkedIn](https://www.linkedin.com/in/carlos-de-la-cruz-romero/) · <hola@cmdelacruzdev.es>

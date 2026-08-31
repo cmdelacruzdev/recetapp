@@ -13,15 +13,6 @@ Route::post('/activate-account', [AuthController::class, 'activateAccountForm'])
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
 Route::post('/reset-password', [AuthController::class, 'resetPassword']);
 
-Route::get('/tips', function () {
-    $file = database_path('tips.json');
-    if (!file_exists($file)) {
-        return response()->json(['tips' => []]);
-    }
-    $tips = json_decode(file_get_contents($file), true);
-    return response()->json(['tips' => $tips ?? []]);
-});
-
 // Rutas Protegidas (requieren Sanctum token)
 Route::middleware('auth:sanctum')->group(function () {
     // Auth
@@ -32,6 +23,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/get_all', [ApiController::class, 'getAll']);
     Route::post('/update_profile', [ApiController::class, 'updateProfile']);
     Route::get('/admin_stats', [ApiController::class, 'adminStats']);
+
+    // Consejos rotativos
+    Route::get('/tips', function () {
+        $file = database_path('tips.json');
+        if (!file_exists($file)) {
+            return response()->json(['tips' => []]);
+        }
+        $tips = json_decode(file_get_contents($file), true);
+        return response()->json(['tips' => $tips ?? []]);
+    });
 
     // Usuarios
     Route::post('/invite_user', [ApiController::class, 'inviteUser']);
