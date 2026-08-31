@@ -390,10 +390,6 @@ php artisan storage:link
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
-
-# Configurar permisos
-chmod -R 775 storage bootstrap/cache
-chown -R www-data:www-data storage bootstrap/cache
 ```
 
 > **Importante:** en producción `APP_DEBUG` debe ser `false`. Asegúrate de que `FRONTEND_URL` apunta a tu dominio del frontend y que los correos (invitaciones, restablecimiento de contraseña) funcionan configurando correctamente `MAIL_*`.
