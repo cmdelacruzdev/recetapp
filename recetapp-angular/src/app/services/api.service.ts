@@ -151,9 +151,12 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/upload/profile-photo`, formData);
   }
 
-  uploadRecipeImage(file: File): Observable<any> {
+  uploadRecipeImage(file: File, recipeId?: string): Observable<any> {
     const formData = new FormData();
     formData.append('image', file);
+    if (recipeId) {
+      formData.append('recipe_id', recipeId);
+    }
     return this.http.post(`${this.apiUrl}/upload/recipe-image`, formData);
   }
 

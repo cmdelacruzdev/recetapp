@@ -3,7 +3,19 @@
 :host { display: block; }
 
 .app-logo-transparente {
-  width: 100px;
-  height: 100px;
+  width: 44px;
+  height: 44px;
   object-fit: cover;
+}
+
+// Compactación vertical de la página para que todo quepa en pantalla
+.form-signin {
+  .form-label {
+    margin-bottom: 2px;
+  }
+
+  .form-control,
+  .input-group-text {
+    min-height: 40px;
+  }
 }

@@ -11,7 +11,8 @@
                     @if (user?.foto) {
                     <img [src]="user.foto" class="rounded-circle mb-2 shadow-sm profile-img-lg" alt="Avatar">
                     } @else {
-                    <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center shadow-sm mx-auto profile-img-lg">
+                    <div
+                        class="rounded-circle bg-secondary d-flex align-items-center justify-content-center shadow-sm mx-auto profile-img-lg">
                         <span class="text-white fs-1">{{ (user?.nombre || 'U')[0].toUpperCase() }}</span>
                     </div>
                     }
@@ -29,8 +30,8 @@
                         <label for="profileName" class="form-label">Mi Nombre</label>
                         <div class="input-group">
                             <span class="input-group-text bg-white"><i class="bi bi-person-badge"></i></span>
-                            <input type="text" class="form-control" id="profileName" name="profileName" autocomplete="name"
-                                [(ngModel)]="editingProfile.nombre" required>
+                            <input type="text" class="form-control" id="profileName" name="profileName"
+                                autocomplete="name" [(ngModel)]="editingProfile.nombre" required>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -84,7 +85,8 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="currentPassword" class="form-label">Contraseña Actual (requerida para cambiarla)</label>
+                        <label for="currentPassword" class="form-label">Contraseña Actual (requerida para
+                            cambiarla)</label>
                         <div class="input-group">
                             <span class="input-group-text bg-white"><i class="bi bi-shield-lock"></i></span>
                             <input type="password" class="form-control" id="currentPassword" name="currentPassword"
@@ -163,12 +165,12 @@
                         <div class="d-flex align-items-center gap-2">
                             @if (u.foto) {
                             <img [src]="u.foto" class="rounded-circle"
-                                style="width: 36px; height: 36px; object-fit: cover; min-width: 36px;"
-                                alt="Avatar">
+                                style="width: 36px; height: 36px; object-fit: cover; min-width: 36px;" alt="Avatar">
                             } @else {
                             <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center"
                                 style="width: 36px; height: 36px; min-width: 36px;">
-                                <span class="text-white" style="font-size: 0.85rem;">{{ (u.nombre || 'U')[0].toUpperCase() }}</span>
+                                <span class="text-white" style="font-size: 0.85rem;">{{ (u.nombre ||
+                                    'U')[0].toUpperCase() }}</span>
                             </div>
                             }
                             <div>
@@ -181,8 +183,8 @@
                             </div>
                         </div>
                         @if (isAdmin || user.username === u.username) {
-                        <button class="btn btn-outline-danger btn-sm" (click)="onDeleteUser(u); $event.stopPropagation()"
-                            title="Eliminar usuario">
+                        <button class="btn btn-outline-danger btn-sm"
+                            (click)="onDeleteUser(u); $event.stopPropagation()" title="Eliminar usuario">
                             <i class="bi bi-trash"></i>
                         </button>
                         }
@@ -194,53 +196,73 @@
                 @if (selectedHouseUser) {
                 <div class="user-detail-overlay" (click)="closeUserDetail()">
                     <div class="user-detail-modal" (click)="$event.stopPropagation()">
+                        <button type="button" class="btn-close user-detail-close" (click)="closeUserDetail()"
+                            aria-label="Cerrar"></button>
                         <div class="mb-3">
                             @if (selectedHouseUser.foto) {
                             <img [src]="selectedHouseUser.foto" class="user-detail-avatar shadow" alt="Avatar">
                             } @else {
                             <div class="user-detail-avatar-fallback bg-secondary shadow">
-                                <span class="text-white fs-3">{{ (selectedHouseUser.nombre || 'U')[0].toUpperCase() }}</span>
+                                <span class="text-white display-6">{{ (selectedHouseUser.nombre || 'U')[0].toUpperCase()
+                                    }}</span>
                             </div>
                             }
                         </div>
                         <h5 class="fw-bold mb-1">{{ selectedHouseUser.nombre }}</h5>
-                        <p class="text-muted small mb-2">{{ selectedHouseUser.username }}</p>
-                        <span class="badge {{ selectedHouseUser.role === 'admin' ? 'bg-primary' : 'bg-secondary' }} mb-2">
-                            {{ selectedHouseUser.role === 'admin' ? 'Admin' : 'User' }}
-                        </span>
-                        <p class="small mb-1"><i class="bi bi-house me-1"></i>{{ user?.nombre_casa }}</p>
-                        <p class="small text-muted mb-3"><i class="bi bi-calendar me-1"></i>{{ selectedHouseUser.created_at }}</p>
-                        <button class="btn btn-outline-secondary btn-sm" (click)="closeUserDetail()">Cerrar</button>
+                        <div class="user-detail-info text-start mt-3">
+                            <div class="d-flex justify-content-between py-2 border-bottom">
+                                <span class="text-muted small"><i class="bi bi-person me-2"></i>Usuario:</span>
+                                <span class="small fw-semibold">{{ selectedHouseUser.username }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between py-2 border-bottom">
+                                <span class="text-muted small"><i class="bi bi-shield me-2"></i>Rol:</span>
+                                <span
+                                    class="badge {{ selectedHouseUser.role === 'admin' ? 'bg-primary' : 'bg-secondary' }}">
+                                    {{ selectedHouseUser.role === 'admin' ? 'Admin' : 'User' }}
+                                </span>
+                            </div>
+                            <div class="d-flex justify-content-between py-2 border-bottom">
+                                <span class="text-muted small"><i class="bi bi-house me-2"></i>Casa:</span>
+                                <span class="small fw-semibold">{{ user?.nombre_casa }}</span>
+                            </div>
+                            <div class="d-flex justify-content-between py-2">
+                                <span class="text-muted small"><i class="bi bi-calendar me-2"></i>Fecha de
+                                    registro:</span>
+                                <span class="small fw-semibold">{{ selectedHouseUser.created_at }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 }
 
                 <hr>
                 <div class="text-center mb-4">
-                    <img src="recetapp_logo_transparente.png" alt="RecetAPP" class="mb-2" style="height: 48px; width: auto;">
+                    <img src="recetapp_logo_transparente.png" alt="RecetAPP" class="mb-2"
+                        style="height: 48px; width: auto;">
                     <h6 class="fw-bold mb-1">RecetAPP</h6>
-                    <p class="text-muted small mb-0">Gestiona tus recetas, planning semanal y lista de la compra.</p>
+                    <p class="text-muted small mb-0">Gestiona tus recetas, planning y compra.</p>
                 </div>
 
                 <div class="bg-light rounded p-3 mb-3 border text-start">
-                    <p class="small mb-2"><strong>Desarrollado por: </strong>Carlos Manuel de la Cruz Romero</p>
-                    <p class="small mb-0"><strong>Soporte: </strong> <a href="mailto:hola@cmdelacruzdev.es"
+                    <p class="small mb-2"  style="font-size: 0.80rem;"><strong>Desarrollador: </strong>Carlos Manuel de la Cruz Romero</p>
+                    <p class="small mb-0"  style="font-size: 0.80rem;"><strong>Soporte: </strong> <a href="mailto:hola@cmdelacruzdev.es"
                             class="text-decoration-none">hola@cmdelacruzdev.es</a></p>
                 </div>
 
-                <div class="text-center mb-3">
-                    <span class="badge bg-primary rounded-pill px-3">Version {{ appVersion }}</span>
-                </div>
+
 
                 @if (appVersionNews) {
-                <div class="bg-light rounded p-3 mb-4 border">
-                    <h6 class="fw-bold mb-2" style="font-size: 0.85rem;">Novedades de la version:</h6>
-                    <p class="small text-muted mb-0" style="white-space: pre-line; font-size: 0.8rem;">{{
+                <div class="bg-light rounded p-3 mb-3 border">
+                    <div class="text-center mb-1">
+                        <span class="badge bg-primary rounded-pill px-3">Version {{ appVersion }}</span>
+                    </div>
+                    <p class="small mb-0" style="font-size: 0.80rem;"><strong>Novedades de la version:</strong></p>
+                    <p class="small text-muted mb-0 mt-0" style="white-space: pre-line; font-size: 0.80rem;">{{
                         appVersionNews }}</p>
                 </div>
                 }
 
-                <p class="x-small text-muted text-center mb-4">&copy; 2026 RecetAPP. Todos los derechos reservados.</p>
+                <p class="x-small text-muted text-center mb-3">&copy; 2026 RecetAPP. Todos los derechos reservados.</p>
 
                 <hr>
                 <button class="btn btn-danger btn-sm w-100" (click)="onLogout()">

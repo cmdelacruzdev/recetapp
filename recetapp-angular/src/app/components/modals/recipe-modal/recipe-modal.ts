@@ -118,7 +118,7 @@ export class RecipeModal implements AfterViewInit, OnDestroy {
 
       // Auto-upload immediately
       try {
-        const result: any = await this.api.uploadRecipeImage(cropped).toPromise();
+        const result: any = await this.api.uploadRecipeImage(cropped, this.editingRecipe.id).toPromise();
         if (result?.url) {
           this.uploadedUrl = result.url;
           this.editingRecipe.imagen = result.url;

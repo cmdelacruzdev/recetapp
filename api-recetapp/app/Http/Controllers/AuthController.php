@@ -38,7 +38,7 @@ class AuthController extends Controller
 
         House::create(['id' => $newCasaId, 'nombre_casa' => trim($data['nombre_casa'])]);
 
-        $foto = $this->generateInitialsAvatar($data['nombre']);
+        $foto = $this->generateInitialsAvatar($data['nombre'], $newCasaId);
 
         $user = User::create([
             'username' => $data['usuario'],
@@ -177,7 +177,7 @@ class AuthController extends Controller
             return response()->json(['error' => 'La contraseña debe tener al menos 6 caracteres'], 400);
         }
 
-        $avatar = $this->generateInitialsAvatar($nombre);
+        $avatar = $this->generateInitialsAvatar($nombre, $user->casa_id);
 
         $user->update([
             'nombre' => $nombre,
@@ -292,7 +292,7 @@ class AuthController extends Controller
         return response()->json(['success' => true]);
     }
 
-    private function generateInitialsAvatar(string $nombre): string
+    private function generateInitialsAvatar(string $nombre, ?string $casaId = null): string
     {
         $iniciales = $this->getIniciales($nombre);
         $color = $this->getColorFromName($nombre);
@@ -301,7 +301,8 @@ class AuthController extends Controller
         $slug = preg_replace('/-+/', '-', $slug);
         $slug = trim($slug, '-');
         $filename = "avatar_{$slug}.svg";
-        $directory = storage_path('app/public/profiles');
+        $dir = $casaId ? "{$casaId}/profiles" : 'profiles';
+        $directory = storage_path("app/public/{$dir}");
         $filepath = "{$directory}/{$filename}";
 
         if (!file_exists($directory)) {
@@ -319,7 +320,7 @@ SVG;
             file_put_contents($filepath, $svg);
         }
 
-        return config('app.url') . "/storage/profiles/{$filename}";
+        return config('app.url') . "/storage/{$dir}/{$filename}";
     }
 
     private function getIniciales(string $nombre): string

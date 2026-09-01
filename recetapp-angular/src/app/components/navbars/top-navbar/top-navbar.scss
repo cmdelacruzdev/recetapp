@@ -3,8 +3,7 @@
 .navbar {
   z-index: 1030;
   padding: 8px 1rem;
-  min-height: calc(#{$navbar-top-height} + env(safe-area-inset-top, 0px));
-  padding-top: calc(8px + env(safe-area-inset-top, 0px));
+  min-height: $navbar-top-height;
 }
 
 .navbar .btn { min-height: unset; }

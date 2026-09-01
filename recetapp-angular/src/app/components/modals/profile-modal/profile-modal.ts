@@ -30,6 +30,7 @@ export class ProfileModal implements AfterViewInit, OnDestroy {
   @Output() deleteUser = new EventEmitter<any>();
   @Output() updateInviteEmail = new EventEmitter<string>();
   @Output() predefinedLoaded = new EventEmitter<void>();
+  @Output() fotoUpdated = new EventEmitter<string>();
 
   appVersion = APP_VERSION;
   appVersionNews = APP_VERSION_NEWS;
@@ -76,10 +77,9 @@ export class ProfileModal implements AfterViewInit, OnDestroy {
       try {
         const result: any = await this.api.uploadProfilePhoto(cropped).toPromise();
         if (result?.url) {
-          this.user.foto = result.url;
           this.editingProfile.foto = result.url;
           this.imagePreview = result.url;
-          this.cdr.detectChanges();
+          this.fotoUpdated.emit(result.url);
         }
       } catch {
         this.toast.error('No se pudo subir la imagen.');
@@ -200,10 +200,9 @@ export class ProfileModal implements AfterViewInit, OnDestroy {
     try {
       const result: any = await this.api.deleteProfilePhoto().toPromise();
       if (result?.success) {
-        this.user.foto = result.foto;
         this.imagePreview = null;
         this.editingProfile.foto = '';
-        this.cdr.detectChanges();
+        this.fotoUpdated.emit(result.foto);
         this.toast.success('Foto eliminada. Se ha restablecido la foto predeterminada.');
       }
     } catch {

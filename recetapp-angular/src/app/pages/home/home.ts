@@ -492,6 +492,11 @@ export class Home implements OnInit, OnDestroy {
     this.profileModalRef.open();
   }
 
+  onUserFotoUpdated(foto: string) {
+    this.appData.user = { ...this.appData.user, foto };
+    this.cdr.detectChanges();
+  }
+
   async saveProfile(event: { profile: any; file?: File }) {
     const { confirm_password, ...profileData } = event.profile;
     const payload = { ...profileData, nombre_casa: this.appData.user.nombre_casa };

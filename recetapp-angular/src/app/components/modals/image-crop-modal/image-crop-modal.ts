@@ -157,6 +157,9 @@ export class ImageCropModal implements AfterViewInit, OnDestroy {
   }
 
   private pauseParentModals() {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
     document.querySelectorAll('.modal.show').forEach((el) => {
       if (el.id !== 'imageCropModal') {
         el.setAttribute('aria-hidden', 'true');

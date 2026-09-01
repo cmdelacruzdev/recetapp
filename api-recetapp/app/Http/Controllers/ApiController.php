@@ -200,7 +200,7 @@ class ApiController extends Controller
             'username' => $email,
             'nombre' => 'Pendiente',
             'password' => Hash::make($tempPassword),
-            'foto' => $this->generateInitialsAvatar('Pendiente'),
+            'foto' => $this->generateInitialsAvatar('Pendiente', $casaId),
             'casa_id' => $casaId,
             'role' => 'user',
             'status' => 'pending',
@@ -489,7 +489,7 @@ class ApiController extends Controller
 
         $imagen = $request->imagen ?? '';
         if (empty($imagen)) {
-            $imagen = $this->generatePlaceholderImage($request->nombre ?? 'Sin nombre');
+            $imagen = $this->generatePlaceholderImage($request->nombre ?? 'Sin nombre', $casaId);
         }
 
         $recipe = Recipe::updateOrCreate(
@@ -556,6 +556,7 @@ class ApiController extends Controller
             }
         }
 
+        $this->deleteStoredFile($recipe->imagen);
         $recipe->ingredients()->detach();
         $recipe->delete();
 
@@ -832,28 +833,17 @@ class ApiController extends Controller
         ]);
 
         $user = $request->user();
+        $casaId = $this->getCasaId($request);
+        $dir = "{$casaId}/profiles";
 
-        if ($user->foto && !$this->isSvgUrl($user->foto)) {
-            $oldPath = parse_url($user->foto, PHP_URL_PATH);
-            if ($oldPath) {
-                $oldRelative = str_replace('/storage/', '', $oldPath);
-                if (Storage::disk('public')->exists($oldRelative)) {
-                    Storage::disk('public')->delete($oldRelative);
-                }
-            }
-        }
+        $this->deleteStoredFile($user->foto);
 
         $file = $request->file('photo');
         $filename = 'user_' . $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
 
-        $directory = storage_path('app/public/profiles');
-        if (!file_exists($directory)) {
-            mkdir($directory, 0755, true);
-        }
+        $file->storeAs($dir, $filename, 'public');
 
-        $file->storeAs('profiles', $filename, 'public');
-
-        $url = $this->assetUrl('/storage/profiles/' . $filename);
+        $url = $this->assetUrl('/storage/' . $dir . '/' . $filename);
         $user->update(['foto' => $url]);
 
         return response()->json(['success' => true, 'url' => $url]);
@@ -865,17 +855,23 @@ class ApiController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ]);
 
+        $casaId = $this->getCasaId($request);
+        $dir = "{$casaId}/recipes";
+
+        $recipeId = $request->input('recipe_id');
+        if ($recipeId) {
+            $recipe = Recipe::where('id', $recipeId)->where('casa_id', $casaId)->first();
+            if ($recipe) {
+                $this->deleteStoredFile($recipe->imagen);
+            }
+        }
+
         $file = $request->file('image');
         $filename = 'recipe_' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-        $directory = storage_path('app/public/recipes');
-        if (!file_exists($directory)) {
-            mkdir($directory, 0755, true);
-        }
+        $file->storeAs($dir, $filename, 'public');
 
-        $file->storeAs('recipes', $filename, 'public');
-
-        $url = $this->assetUrl('/storage/recipes/' . $filename);
+        $url = $this->assetUrl('/storage/' . $dir . '/' . $filename);
 
         return response()->json(['success' => true, 'url' => $url]);
     }
@@ -883,18 +879,11 @@ class ApiController extends Controller
     public function deleteProfilePhoto(Request $request)
     {
         $user = $request->user();
+        $casaId = $this->getCasaId($request);
 
-        if ($user->foto && !$this->isSvgUrl($user->foto)) {
-            $oldPath = parse_url($user->foto, PHP_URL_PATH);
-            if ($oldPath) {
-                $oldRelative = str_replace('/storage/', '', $oldPath);
-                if (Storage::disk('public')->exists($oldRelative)) {
-                    Storage::disk('public')->delete($oldRelative);
-                }
-            }
-        }
+        $this->deleteStoredFile($user->foto);
 
-        $defaultFoto = $this->generateInitialsAvatar($user->nombre);
+        $defaultFoto = $this->generateInitialsAvatar($user->nombre, $casaId);
         $user->update(['foto' => $defaultFoto]);
 
         return response()->json(['success' => true, 'foto' => $this->resolveUrl($defaultFoto)]);
@@ -914,33 +903,37 @@ class ApiController extends Controller
             return response()->json(['error' => 'Receta no encontrada'], 404);
         }
 
-        if ($recipe->imagen && !$this->isSvgUrl($recipe->imagen)) {
-            $oldPath = parse_url($recipe->imagen, PHP_URL_PATH);
-            if ($oldPath) {
-                $oldRelative = str_replace('/storage/', '', $oldPath);
-                if (Storage::disk('public')->exists($oldRelative)) {
-                    Storage::disk('public')->delete($oldRelative);
-                }
-            }
-        }
+        $this->deleteStoredFile($recipe->imagen);
 
-        $defaultImage = $this->generatePlaceholderImage($recipe->nombre);
+        $defaultImage = $this->generatePlaceholderImage($recipe->nombre, $casaId);
         $recipe->update(['imagen' => $defaultImage]);
 
         return response()->json(['success' => true, 'imagen' => $this->resolveUrl($defaultImage)]);
     }
 
-    private function isSvgUrl(string $url): bool
+    private function deleteStoredFile(?string $url): void
     {
+        if (empty($url)) {
+            return;
+        }
+
         $path = parse_url($url, PHP_URL_PATH);
-        return $path && strtolower(pathinfo($path, PATHINFO_EXTENSION)) === 'svg';
+        if (!$path) {
+            return;
+        }
+
+        $relative = ltrim(str_replace('/storage/', '', $path), '/');
+        if (Storage::disk('public')->exists($relative)) {
+            Storage::disk('public')->delete($relative);
+        }
     }
 
-    private function generatePlaceholderImage(string $nombre): string
+    private function generatePlaceholderImage(string $nombre, ?string $casaId = null): string
     {
+        $dir = $casaId ? "{$casaId}/recipes" : 'recipes';
         $slug = $this->slugify($nombre);
         $filename = "{$slug}.svg";
-        $directory = storage_path('app/public/recipes');
+        $directory = storage_path("app/public/{$dir}");
         $filepath = "{$directory}/{$filename}";
 
         if (!file_exists($directory)) {
@@ -964,7 +957,7 @@ SVG;
 
         file_put_contents($filepath, $svg);
 
-        return '/storage/recipes/' . $filename;
+        return '/storage/' . $dir . '/' . $filename;
     }
 
     private function wrapRecipeName(string $nombre): array
@@ -1041,7 +1034,7 @@ SVG;
         return trim($text, '-');
     }
 
-    private function generateInitialsAvatar(string $nombre): string
+    private function generateInitialsAvatar(string $nombre, ?string $casaId = null): string
     {
         $iniciales = $this->getIniciales($nombre);
         $color = $this->getColorFromName($nombre);
@@ -1050,7 +1043,8 @@ SVG;
         $slug = preg_replace('/-+/', '-', $slug);
         $slug = trim($slug, '-');
         $filename = "avatar_{$slug}.svg";
-        $directory = storage_path('app/public/profiles');
+        $dir = $casaId ? "{$casaId}/profiles" : 'profiles';
+        $directory = storage_path("app/public/{$dir}");
         $filepath = "{$directory}/{$filename}";
 
         if (!file_exists($directory)) {
@@ -1068,7 +1062,7 @@ SVG;
             file_put_contents($filepath, $svg);
         }
 
-        return '/storage/profiles/' . $filename;
+        return '/storage/' . $dir . '/' . $filename;
     }
 
     private function getIniciales(string $nombre): string
