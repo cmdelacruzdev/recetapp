@@ -16,4 +16,7 @@
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: none;
   padding: $content-padding;
+  /* Reserva el espacio de la barra inferior fija para que el último
+     elemento de la lista sea visible por encima de ella */
+  padding-bottom: calc(#{$navbar-bottom-height} + #{$content-padding});
 }

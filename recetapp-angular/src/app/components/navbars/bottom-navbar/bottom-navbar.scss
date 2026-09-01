@@ -1,12 +1,22 @@
 @use '../../../../styles/variables' as *;
 
-:host { display: block; }
+:host {
+  display: block;
+  /* Fija la barra al borde inferior físico, independiente del safe-area y
+     del cálculo de 100dvh en iOS PWA standalone */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1030;
+}
 
 nav.navbar {
   padding: 10px 0 14px;
   min-height: $navbar-bottom-height;
   background-color: $white;
   border-top: 1px solid $gray-300;
+  box-shadow: 0 -2px 8px rgba(26, 26, 26, 0.06);
 }
 
 .nav-btn {

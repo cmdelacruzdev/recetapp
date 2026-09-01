@@ -83,13 +83,15 @@
 <app-ingredient-modal
     #ingredientModal
     [ingredient]="{ id: '', name: '' }"
-    (save)="saveIngredient($event)" />
+    (save)="saveIngredient($event)"
+    (close)="onModalClosed()" />
 
 <app-recipe-modal
     #recipeModal
     [ingredients]="appData.ingredients"
     (save)="saveRecipe($event)"
-    (delete)="deleteRecipe($event)" />
+    (delete)="deleteRecipe($event)"
+    (close)="onModalClosed()" />
 
 <app-profile-modal
     #profileModal
@@ -104,4 +106,5 @@
     (deleteUser)="deleteHouseUser($event)"
     (updateInviteEmail)="inviteEmail = $event"
     (predefinedLoaded)="loadData()"
-    (fotoUpdated)="onUserFotoUpdated($event)" />
+    (fotoUpdated)="onUserFotoUpdated($event)"
+    (close)="onModalClosed()" />

@@ -32,6 +32,7 @@ export class Home implements OnInit, OnDestroy {
   @ViewChild('profileModal') profileModalRef!: ProfileModal;
 
   activeTab = 'dashboard';
+  modalOpen = false;
   appData: any = {
     ingredients: [],
     recipes: [],
@@ -87,7 +88,9 @@ export class Home implements OnInit, OnDestroy {
     this.loadAdminStats();
     this.loadTips();
 
-    this.syncInterval = setInterval(() => this.loadData(), 15000);
+    this.syncInterval = setInterval(() => {
+      if (!this.modalOpen) this.loadData();
+    }, 15000);
     this.onVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
         this.loadData();
@@ -417,6 +420,7 @@ export class Home implements OnInit, OnDestroy {
   // ---- INGREDIENTS CRUD ----
 
   openIngredientModal(event: { id: string; name: string }) {
+    this.modalOpen = true;
     this.ingredientModalRef.open(event);
   }
 
@@ -445,6 +449,7 @@ export class Home implements OnInit, OnDestroy {
     } else {
       recipe = { id: '', nombre: '', pasos: '', imagen: '', ingredientes: [] };
     }
+    this.modalOpen = true;
     this.recipeModalRef.open(recipe, event.viewMode);
   }
 
@@ -480,6 +485,11 @@ export class Home implements OnInit, OnDestroy {
     }
   }
 
+  onModalClosed() {
+    this.modalOpen = false;
+    this.loadData();
+  }
+
   // ---- PROFILE ----
 
   openProfileModal() {
@@ -489,6 +499,7 @@ export class Home implements OnInit, OnDestroy {
     this.editingProfile.confirm_password = '';
     this.editingProfile.foto = '';
     this.loadAdminStats();
+    this.modalOpen = true;
     this.profileModalRef.open();
   }
 
