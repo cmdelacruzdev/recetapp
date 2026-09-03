@@ -41,7 +41,9 @@ nav.navbar {
 
 // En móvil los iconos se ven un poco más grandes para mejor pulsación táctil
 @media (max-width: 767.98px) {
-  nav.navbar { padding: 10px 0 12px; }
+  nav.navbar {
+    padding: 10px 0 12px;
+  }
 
   .nav-btn {
     transform: scale(1.2);

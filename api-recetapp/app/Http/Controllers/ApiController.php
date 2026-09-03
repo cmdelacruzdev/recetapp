@@ -21,7 +21,7 @@ class ApiController extends Controller
 
     private function assetUrl(string $path): string
     {
-        return config('app.url') . $path;
+        return $path;
     }
 
     private function resolveUrl(string $path): string
@@ -29,7 +29,7 @@ class ApiController extends Controller
         if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
             return $path;
         }
-        return $this->assetUrl($path);
+        return '/' . ltrim($path, '/');
     }
 
     public function getAll(Request $request)
@@ -789,14 +789,15 @@ class ApiController extends Controller
     {
         $qty = mb_strtolower(trim($qty));
         $map = ['un' => '1', 'una' => '1', 'unas' => '1', 'uno' => '1'];
-        if (isset($map[$qty])) return $map[$qty];
+        if (isset($map[$qty]))
+            return $map[$qty];
         return $qty;
     }
 
     private function normalizeIngredientName(string $name): string
     {
         $name = mb_strtolower(trim($name));
-        $name = str_replace(['á','é','í','ó','ú','ñ','ü'], ['a','e','i','o','u','n','u'], $name);
+        $name = str_replace(['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü'], ['a', 'e', 'i', 'o', 'u', 'n', 'u'], $name);
         $name = preg_replace('/s$/', '', $name);
         $name = preg_replace('/es$/', '', $name);
         $name = preg_replace('/\s+/', ' ', $name);
@@ -810,8 +811,8 @@ class ApiController extends Controller
         $qty2 = $new['quantity'];
 
         if (is_numeric($qty1) && is_numeric($qty2)) {
-            $sum = (float)$qty1 + (float)$qty2;
-            $sumStr = $sum == (int)$sum ? (string)(int)$sum : (string)$sum;
+            $sum = (float) $qty1 + (float) $qty2;
+            $sumStr = $sum == (int) $sum ? (string) (int) $sum : (string) $sum;
             return $name . ' (' . $sumStr . ')';
         }
 
@@ -1084,9 +1085,21 @@ SVG;
     private function getColorFromName(string $name): string
     {
         $colors = [
-            '#e74c3c', '#e67e22', '#f1c40f', '#2ecc71', '#1abc9c',
-            '#3498db', '#9b59b6', '#34495e', '#e91e63', '#00bcd4',
-            '#ff5722', '#795548', '#607d8b', '#4caf50', '#ff9800',
+            '#e74c3c',
+            '#e67e22',
+            '#f1c40f',
+            '#2ecc71',
+            '#1abc9c',
+            '#3498db',
+            '#9b59b6',
+            '#34495e',
+            '#e91e63',
+            '#00bcd4',
+            '#ff5722',
+            '#795548',
+            '#607d8b',
+            '#4caf50',
+            '#ff9800',
         ];
 
         $hash = crc32($name);

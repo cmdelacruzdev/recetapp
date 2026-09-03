@@ -1,22 +1,23 @@
 @use '../../../styles/variables' as *;
 
 :host {
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-  max-height: 100dvh;
-  overflow: hidden;
+  display: block;
 }
 
-/* ---- CONTENT (Layout Guards - scroll encapsulado entre navs) ---- */
+/* ---- CONTENT ----
+   Layout de 2 capas independientes:
+   - Capa 1 (Frame fijo): top-navbar + bottom-navbar → position: fixed
+   - Capa 2 (Scroll): .app-content → position: fixed entre ambos navs
+   Los navs y el contenido están en contextos de posicionamiento separados.
+   Nada se tapa, nada se mueve al abrir teclado o formularios. */
 .app-content {
-  flex: 1 1 auto;
-  min-height: 0;
+  position: fixed;
+  top: $navbar-top-height;
+  bottom: $navbar-bottom-height;
+  left: 0;
+  right: 0;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: none;
   padding: $content-padding;
-  /* Reserva el espacio de la barra inferior fija para que el último
-     elemento de la lista sea visible por encima de ella */
-  padding-bottom: calc(#{$navbar-bottom-height} + #{$content-padding});
 }
