@@ -41,7 +41,7 @@
     <div class="col-12">
         <div class="card shadow-sm h-100 recipe-card">
             @if (r.imagen) {
-            <img [src]="r.imagen" class="card-img-top recipe-img"
+            <img [src]="r.imagen | imgSrc" class="card-img-top recipe-img"
                 (click)="openRecipe.emit({ id: r.id, viewMode: true })" style="cursor: pointer;">
             }
             <div class="card-body">

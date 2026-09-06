@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <div class="text-center mb-3">
                     @if (user?.foto) {
-                    <img [src]="user.foto" class="rounded-circle mb-2 shadow-sm profile-img-lg" alt="Avatar">
+                    <img [src]="user.foto | imgSrc" class="rounded-circle mb-2 shadow-sm profile-img-lg" alt="Avatar">
                     } @else {
                     <div
                         class="rounded-circle bg-secondary d-flex align-items-center justify-content-center shadow-sm mx-auto profile-img-lg">
@@ -54,7 +54,7 @@
                     <div class="text-center mb-3">
                         <p class="small text-muted mb-2">Así se verá tu foto:</p>
                         <div class="image-crop-preview mx-auto">
-                            <img [src]="imagePreview" alt="Preview">
+                            <img [src]="imagePreview | imgSrc" alt="Preview">
                         </div>
                         <button type="button" class="btn btn-outline-danger btn-sm mt-2" (click)="clearPreview()">
                             <i class="bi bi-x-lg"></i> Quitar foto
@@ -164,7 +164,7 @@
                         (click)="showUserDetail(u)" style="cursor: pointer;">
                         <div class="d-flex align-items-center gap-2">
                             @if (u.foto) {
-                            <img [src]="u.foto" class="rounded-circle"
+                            <img [src]="u.foto | imgSrc" class="rounded-circle"
                                 style="width: 36px; height: 36px; object-fit: cover; min-width: 36px;" alt="Avatar">
                             } @else {
                             <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center"
@@ -200,7 +200,7 @@
                             aria-label="Cerrar"></button>
                         <div class="mb-3">
                             @if (selectedHouseUser.foto) {
-                            <img [src]="selectedHouseUser.foto" class="user-detail-avatar shadow" alt="Avatar">
+                            <img [src]="selectedHouseUser.foto | imgSrc" class="user-detail-avatar shadow" alt="Avatar">
                             } @else {
                             <div class="user-detail-avatar-fallback bg-secondary shadow">
                                 <span class="text-white display-6">{{ (selectedHouseUser.nombre || 'U')[0].toUpperCase()

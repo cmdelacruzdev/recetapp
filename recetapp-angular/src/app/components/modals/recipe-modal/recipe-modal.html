@@ -9,7 +9,7 @@
             <div class="modal-body">
                 @if (isViewMode) {
                 @if (editingRecipe.imagen) {
-                <img [src]="editingRecipe.imagen" class="img-fluid rounded mb-3 recipe-modal-img">
+                <img [src]="editingRecipe.imagen | imgSrc" class="img-fluid rounded mb-3 recipe-modal-img">
                 }
                 <h6 class="fw-bold">Ingredientes:</h6>
                 <ul class="list-group list-group-flush mb-3">
@@ -43,7 +43,7 @@
                     @if (imagePreview) {
                     <div class="text-center mb-3">
                         <p class="small text-muted mb-1">Preview:</p>
-                        <img [src]="imagePreview" class="rounded recipe-img-preview" alt="Preview">
+                        <img [src]="imagePreview | imgSrc" class="rounded recipe-img-preview" alt="Preview">
                         <div>
                             <button type="button" class="btn btn-outline-danger btn-sm mt-2" (click)="clearPreview()">
                                 <i class="bi bi-x-lg"></i> Quitar foto

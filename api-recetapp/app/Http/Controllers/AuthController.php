@@ -225,7 +225,7 @@ class AuthController extends Controller
         if (str_starts_with($foto, 'http://') || str_starts_with($foto, 'https://')) {
             return $foto;
         }
-        return config('app.url') . $foto;
+        return '/' . ltrim($foto, '/');
     }
 
     public function forgotPassword(Request $request)
@@ -302,7 +302,7 @@ class AuthController extends Controller
         $slug = trim($slug, '-');
         $filename = "avatar_{$slug}.svg";
         $dir = $casaId ? "{$casaId}/profiles" : 'profiles';
-        $directory = storage_path("app/public/{$dir}");
+        $directory = public_path('storage/' . trim($dir, '/'));
         $filepath = "{$directory}/{$filename}";
 
         if (!file_exists($directory)) {
@@ -320,7 +320,7 @@ SVG;
             file_put_contents($filepath, $svg);
         }
 
-        return config('app.url') . "/storage/{$dir}/{$filename}";
+        return "/storage/{$dir}/{$filename}";
     }
 
     private function getIniciales(string $nombre): string

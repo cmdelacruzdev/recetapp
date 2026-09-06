@@ -14,7 +14,7 @@
             <button class="btn btn-link p-0 rounded-circle text-decoration-none nav-avatar-btn"
                 (click)="openProfile.emit()">
                 @if (user.foto) {
-                <img [src]="user.foto" class="rounded-circle nav-avatar" alt="Avatar">
+                <img [src]="user.foto | imgSrc" class="rounded-circle nav-avatar" alt="Avatar">
                 } @else {
                 <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center nav-avatar">
                     {{ (user.nombre || 'U')[0].toUpperCase() }}

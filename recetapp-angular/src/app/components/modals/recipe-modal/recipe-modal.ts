@@ -3,13 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { ImageCropModal } from '../image-crop-modal/image-crop-modal';
 import { ApiService } from '../../../services/api.service';
 import { ToastService } from '../../../services/toast.service';
+import { ImgSrcPipe } from "../../../pipes/img-src.pipe";
 
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-recipe-modal',
-  standalone: true,
-  imports: [FormsModule, ImageCropModal],
+  imports: [FormsModule, ImageCropModal, ImgSrcPipe],
   templateUrl: './recipe-modal.html',
   styleUrls: ['./recipe-modal.scss'],
 })

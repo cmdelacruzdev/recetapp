@@ -5,13 +5,14 @@ import { ApiService } from '../../../services/api.service';
 import { ToastService } from '../../../services/toast.service';
 import { DialogService } from '../../../services/dialog.service';
 import { APP_VERSION, APP_VERSION_NEWS } from '../../../core/config/version.config';
+import { ImgSrcPipe } from '../../../pipes/img-src.pipe';
 
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-profile-modal',
   standalone: true,
-  imports: [FormsModule, ImageCropModal],
+  imports: [FormsModule, ImageCropModal, ImgSrcPipe],
   templateUrl: './profile-modal.html',
   styleUrls: ['./profile-modal.scss'],
 })

@@ -124,12 +124,12 @@ class SuperAdminController extends Controller
             Artisan::call('optimize:clear');
             Artisan::call('config:clear');
             Artisan::call('cache:clear');
+            Artisan::call('route:clear');
             Artisan::call('migrate', ['--force' => true]);
-            Artisan::call('storage:link');
 
             return response()->json([
                 'success' => true,
-                'message' => 'Caché del servidor limpiada, link creado y migraciones ejecutadas correctamente.',
+                'message' => 'Caché del servidor limpiada y migraciones ejecutadas correctamente.',
             ]);
         } catch (\Throwable $e) {
             Log::error('clearCache falló: ' . $e::class . ': ' . $this->safeAscii($e->getMessage()), ['trace' => $this->safeAscii($e->getTraceAsString())]);
@@ -149,7 +149,7 @@ class SuperAdminController extends Controller
         $slug = preg_replace('/-+/', '-', $slug);
         $slug = trim($slug, '-');
         $filename = "{$slug}.svg";
-        $directory = storage_path('app/public/recipes');
+        $directory = public_path('storage/recipes');
         $filepath = "{$directory}/{$filename}";
 
         if (!file_exists($directory)) {

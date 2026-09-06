@@ -1,10 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ImgSrcPipe } from '../../../pipes/img-src.pipe';
 
 @Component({
   selector: 'app-recipes-tab',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ImgSrcPipe],
   templateUrl: './recipes-tab.html',
   styleUrls: ['./recipes-tab.scss'],
 })

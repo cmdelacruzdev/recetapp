@@ -21,7 +21,7 @@ class ApiController extends Controller
 
     private function assetUrl(string $path): string
     {
-        return $path;
+        return '/' . ltrim($path, '/');
     }
 
     private function resolveUrl(string $path): string
@@ -388,15 +388,15 @@ class ApiController extends Controller
 
     private function calculateStorage(string $casaId): float
     {
-        $profileSize = Storage::disk('public')->exists('profiles')
-            ? collect(Storage::disk('public')->allFiles("profiles"))
+        $profileSize = Storage::disk('images')->exists('profiles')
+            ? collect(Storage::disk('images')->allFiles("profiles"))
                 ->filter(fn($file) => true)
-                ->sum(fn($file) => Storage::disk('public')->size($file))
+                ->sum(fn($file) => Storage::disk('images')->size($file))
             : 0;
 
-        $recipeSize = Storage::disk('public')->exists('recipes')
-            ? collect(Storage::disk('public')->allFiles("recipes"))
-                ->sum(fn($file) => Storage::disk('public')->size($file))
+        $recipeSize = Storage::disk('images')->exists('recipes')
+            ? collect(Storage::disk('images')->allFiles("recipes"))
+                ->sum(fn($file) => Storage::disk('images')->size($file))
             : 0;
 
         return round(($profileSize + $recipeSize) / (1024 * 1024), 2);
@@ -404,8 +404,8 @@ class ApiController extends Controller
 
     private function calculateGlobalStorage(): float
     {
-        $files = Storage::disk('public')->allFiles();
-        $totalSize = collect($files)->sum(fn($file) => Storage::disk('public')->size($file));
+        $files = Storage::disk('images')->allFiles();
+        $totalSize = collect($files)->sum(fn($file) => Storage::disk('images')->size($file));
         return round($totalSize / (1024 * 1024), 2);
     }
 
@@ -842,7 +842,7 @@ class ApiController extends Controller
         $file = $request->file('photo');
         $filename = 'user_' . $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
 
-        $file->storeAs($dir, $filename, 'public');
+        $file->storeAs($dir, $filename, 'images');
 
         $url = $this->assetUrl('/storage/' . $dir . '/' . $filename);
         $user->update(['foto' => $url]);
@@ -870,7 +870,7 @@ class ApiController extends Controller
         $file = $request->file('image');
         $filename = 'recipe_' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-        $file->storeAs($dir, $filename, 'public');
+        $file->storeAs($dir, $filename, 'images');
 
         $url = $this->assetUrl('/storage/' . $dir . '/' . $filename);
 
@@ -924,8 +924,8 @@ class ApiController extends Controller
         }
 
         $relative = ltrim(str_replace('/storage/', '', $path), '/');
-        if (Storage::disk('public')->exists($relative)) {
-            Storage::disk('public')->delete($relative);
+        if (Storage::disk('images')->exists($relative)) {
+            Storage::disk('images')->delete($relative);
         }
     }
 
@@ -934,7 +934,7 @@ class ApiController extends Controller
         $dir = $casaId ? "{$casaId}/recipes" : 'recipes';
         $slug = $this->slugify($nombre);
         $filename = "{$slug}.svg";
-        $directory = storage_path("app/public/{$dir}");
+        $directory = public_path('storage/' . trim($dir, '/'));
         $filepath = "{$directory}/{$filename}";
 
         if (!file_exists($directory)) {
@@ -1045,7 +1045,7 @@ SVG;
         $slug = trim($slug, '-');
         $filename = "avatar_{$slug}.svg";
         $dir = $casaId ? "{$casaId}/profiles" : 'profiles';
-        $directory = storage_path("app/public/{$dir}");
+        $directory = public_path('storage/' . trim($dir, '/'));
         $filepath = "{$directory}/{$filename}";
 
         if (!file_exists($directory)) {
