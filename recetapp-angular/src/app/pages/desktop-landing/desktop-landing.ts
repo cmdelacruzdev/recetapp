@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-desktop-landing',
@@ -9,11 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./desktop-landing.scss'],
 })
 export class DesktopLanding implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private api: ApiService,
+  ) {}
 
   ngOnInit() {
     if (typeof window !== 'undefined' && window.innerWidth < 768) {
-      this.router.navigate(['/login']);
+      this.router.navigate([this.api.isAuthenticated() ? '/home' : '/login']);
     }
   }
 }

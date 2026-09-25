@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { finalize } from 'rxjs';
 import { ApiService } from '../../services/api.service';
 import { ToastService } from '../../services/toast.service';
 import { DialogService } from '../../services/dialog.service';
@@ -176,9 +177,16 @@ export class Home implements OnInit, OnDestroy {
   }
 
   logout() {
-    localStorage.removeItem('remembered_credentials');
-    this.api.clearToken();
-    this.router.navigate(['/login']);
+    this.api.logout().pipe(
+      finalize(() => {
+        this.api.clearToken();
+        if (typeof window !== 'undefined') {
+          window.localStorage.removeItem('remembered_username');
+          window.localStorage.removeItem('remembered_credentials');
+        }
+        this.router.navigate(['/login']);
+      }),
+    ).subscribe();
   }
 
   get ownRecipesCount(): number {

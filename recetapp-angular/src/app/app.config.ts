@@ -14,7 +14,9 @@ const PUBLIC_AUTH_URLS = ['/api/login', '/api/register', '/api/forgot-password',
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
-  const token = localStorage.getItem('auth_token');
+  const token = typeof window !== 'undefined'
+    ? window.localStorage.getItem('auth_token') || window.sessionStorage.getItem('auth_token')
+    : null;
   if (token) {
     req = req.clone({
       setHeaders: { Authorization: `Bearer ${token}` },
@@ -23,7 +25,10 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
       if (error.status === 401 && !PUBLIC_AUTH_URLS.some((u) => req.url.includes(u)) && router.url !== '/login') {
-        localStorage.removeItem('auth_token');
+        if (typeof window !== 'undefined') {
+          window.localStorage.removeItem('auth_token');
+          window.sessionStorage.removeItem('auth_token');
+        }
         router.navigateByUrl('/login');
       }
       return throwError(() => error);

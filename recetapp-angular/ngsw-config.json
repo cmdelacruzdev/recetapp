@@ -29,18 +29,6 @@
       }
     }
   ],
-  "dataGroups": [
-    {
-      "name": "api-read",
-      "urls": ["/api/**"],
-      "cacheConfig": {
-        "strategy": "freshness",
-        "timeout": 10000,
-        "maxSize": 50,
-        "maxAge": 3600000
-      }
-    }
-  ],
   "navigationUrls": [
     "^(?!.*\\.(?:html|css|js|json|svg|png|jpg|jpeg|gif|woff|woff2|ttf|ico|webmanifest)$)",
     "^(?!.*\\.(?:\\?|\\#).*)$"

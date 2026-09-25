@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -8,20 +9,41 @@ import { environment } from '../../environments/environment';
 })
 export class ApiService {
   private apiUrl = environment.apiUrl;
+  private readonly platformId = inject(PLATFORM_ID);
 
   constructor(private http: HttpClient) {}
 
   // Token management
   getToken(): string | null {
-    return localStorage.getItem('auth_token');
+    if (!isPlatformBrowser(this.platformId)) {
+      return null;
+    }
+
+    return window.localStorage.getItem('auth_token') || window.sessionStorage.getItem('auth_token');
   }
 
-  setToken(token: string): void {
-    localStorage.setItem('auth_token', token);
+  setToken(token: string, remember = true): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    if (remember) {
+      window.localStorage.setItem('auth_token', token);
+      window.sessionStorage.removeItem('auth_token');
+      return;
+    }
+
+    window.sessionStorage.setItem('auth_token', token);
+    window.localStorage.removeItem('auth_token');
   }
 
   clearToken(): void {
-    localStorage.removeItem('auth_token');
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    window.localStorage.removeItem('auth_token');
+    window.sessionStorage.removeItem('auth_token');
   }
 
   isAuthenticated(): boolean {

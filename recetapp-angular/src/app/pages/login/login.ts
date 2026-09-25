@@ -24,15 +24,28 @@ export class Login implements OnInit {
   ) {}
 
   ngOnInit() {
-    const saved = localStorage.getItem('remembered_credentials');
-    if (saved) {
-      try {
-        const creds = JSON.parse(saved);
-        this.username = creds.username || '';
-        this.password = creds.password || '';
+    if (typeof window !== 'undefined') {
+      const savedUsername = window.localStorage.getItem('remembered_username');
+      if (savedUsername) {
+        this.username = savedUsername;
         this.rememberMe = true;
-      } catch {
-        localStorage.removeItem('remembered_credentials');
+      }
+
+      const legacyCredentials = window.localStorage.getItem('remembered_credentials');
+      if (legacyCredentials) {
+        try {
+          const creds = JSON.parse(legacyCredentials);
+          this.username = creds.username || this.username;
+          this.rememberMe = true;
+        } catch {
+          window.localStorage.removeItem('remembered_credentials');
+        }
+        window.localStorage.removeItem('remembered_credentials');
+      }
+
+      if (this.api.isAuthenticated()) {
+        this.router.navigate(['/home']);
+        return;
       }
     }
 
@@ -47,14 +60,14 @@ export class Login implements OnInit {
   handleLogin() {
     this.api.login({ username: this.username, password: this.password }).subscribe({
       next: (res) => {
-        this.api.setToken(res.token);
-        if (this.rememberMe) {
-          localStorage.setItem('remembered_credentials', JSON.stringify({
-            username: this.username,
-            password: this.password,
-          }));
-        } else {
-          localStorage.removeItem('remembered_credentials');
+        this.api.setToken(res.token, this.rememberMe);
+        if (typeof window !== 'undefined') {
+          if (this.rememberMe) {
+            window.localStorage.setItem('remembered_username', this.username);
+          } else {
+            window.localStorage.removeItem('remembered_username');
+          }
+          window.localStorage.removeItem('remembered_credentials');
         }
         this.router.navigate(['/home']);
       },
